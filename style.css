@@ -1001,5 +1001,58 @@ footer {
 ===================================================== */
 
 .scroll-cue {
-  bottom: 95px;
+  bottom: 135px;
+}
+/* ===== HALLOWEEN PAGE SCHEDULE COLORS ===== */
+.halloween-schedule {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 106, 0, 0.25), transparent 30%),
+    radial-gradient(circle at 80% 60%, rgba(120, 0, 0, 0.3), transparent 35%),
+    #050000;
+}
+
+.halloween-schedule .schedule-card {
+  border-color: rgba(255, 106, 0, 0.35);
+  box-shadow:
+    0 0 20px rgba(255, 106, 0, 0.18),
+    0 0 50px rgba(120, 0, 0, 0.25);
+}
+
+.halloween-schedule .schedule-card h3,
+.halloween-gallery-section .eyebrow {
+  color: #ff6a00;
+}
+
+/* ===== HALLOWEEN GALLERY SECTION ===== */
+.halloween-gallery-section {
+  background:
+    radial-gradient(circle at center, rgba(255, 106, 0, 0.12), transparent 35%),
+    #070000;
+}
+
+.halloween-photo-one {
+  grid-row: span 2;
+  background-image: url("images/halloween-show.jpg");
+}
+
+.halloween-photo-two {
+  background-image: url("images/halloween-2.jpg");
+}
+
+.halloween-photo-three {
+  background-image: url("images/halloween-3.jpg");
+}
+
+.halloween-photo-four {
+  grid-column: span 2;
+  background-image: url("images/halloween-4.jpg");
+}
+
+/* Mobile fix for Halloween gallery */
+@media (max-width: 900px) {
+  .halloween-photo-one,
+  .halloween-photo-four {
+    grid-row: auto;
+    grid-column: auto;
+  }
 }
