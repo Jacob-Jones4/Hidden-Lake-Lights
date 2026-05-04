@@ -613,7 +613,7 @@ h2 {
 .about-photo {
   background-image:
     linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.34)),
-    url("images/House-red-and-green-2022.jpg");
+    url("images/about-us-hll.jpg");
 }
 
 /* ===== PANELS ===== */
@@ -774,16 +774,16 @@ h2 {
 }
 
 .photo-two {
-  background-image: url("images/House-red-and-green-2022.jpg");
+  background-image: url("images/2025-happy-new-year.jpg");
 }
 
 .photo-three {
-  background-image: url("images/Christmas-2023_edited.png");
+  background-image: url("images/2025-christmas-2");
 }
 
 .photo-four {
   grid-column: span 2;
-  background-image: url("images/halloween-show.jpg");
+  background-image: url("images/2025-halloween01.jpg");
 }
 
 /* ===== CONTACT ===== */
