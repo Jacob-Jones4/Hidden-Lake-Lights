@@ -4162,29 +4162,28 @@ input, select, textarea {
   background-position: center center !important;
   background-repeat: no-repeat !important;
 
-  height: 360px !important;
-  min-height: 360px !important;
+  height: 320px !important;
+  min-height: 320px !important;
   padding: 5em 0 2em 0 !important;
 
+  clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%) !important;
+  margin-bottom: -60px !important;
   position: relative !important;
-  z-index: 2 !important;
-  clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
+  z-index: 5 !important;
 }
 
 #banner:before,
-#banner:after {
-  display: none !important;
-}
-
-#About\ Us {
-  margin-top: -80px !important;
-  padding-top: 80px !important;
-  position: relative !important;
-  z-index: 1 !important;
-  clip-path: none !important;
-}
-
+#banner:after,
 .wrapper:before,
 .wrapper:after {
   display: none !important;
+}
+
+#About\ Us,
+#one {
+  margin-top: 0 !important;
+  padding-top: 80px !important;
+  background: #4c5c96 !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
