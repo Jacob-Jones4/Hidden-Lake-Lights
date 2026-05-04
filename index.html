@@ -3,19 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hidden Lake Lights</title>
+
+  <title>Hidden Lake Lights | St. Peters Holiday Light Show</title>
+  <meta name="description" content="Hidden Lake Lights is a free Halloween and Christmas synchronized light display in St. Peters, Missouri." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="top-bar">2025 Christmas Light Show starts November 29 at 6:00 PM</div>
+  <div class="background-glow"></div>
+  <div class="snow" aria-hidden="true"></div>
 
-  <header>
+  <div class="top-bar">
+    <span class="pulse-dot"></span>
+    2025 Christmas Light Show starts November 29 at 6:00 PM
+  </div>
+
+  <header class="site-header">
     <nav class="nav">
-      <a class="logo" href="#home">Hidden Lake Lights</a>
+      <a class="logo" href="#home">
+        <span class="logo-bulb"></span>
+        <span>Hidden Lake Lights</span>
+      </a>
 
-      <button class="menu-btn" id="menuBtn">☰</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
 
       <div class="nav-links" id="navLinks">
         <a href="#home">Home</a>
@@ -28,85 +43,178 @@
     </nav>
   </header>
 
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <p class="small-title">Halloween & Christmas Light Display</p>
-      <h1>Hidden Lake Lights</h1>
-      <p>Drive up, tune to <strong>90.1 FM</strong>, and enjoy the show.</p>
-      <div class="hero-buttons">
-        <a class="button" href="#schedule">View Schedule</a>
-        <a class="button secondary" href="#contact">Contact Us</a>
+  <main>
+    <section class="hero" id="home">
+      <div class="light-string" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
       </div>
-    </div>
-  </section>
 
-  <section class="info-cards">
-    <div class="card">
-      <h3>90.1 FM</h3>
-      <p>Radio Station</p>
-    </div>
-    <div class="card">
-      <h3>24,990</h3>
-      <p>Christmas Lights</p>
-    </div>
-    <div class="card">
-      <h3>7,824</h3>
-      <p>Halloween Lights</p>
-    </div>
-  </section>
+      <div class="hero-overlay"></div>
 
-  <section class="section" id="about">
-    <h2>About The Show</h2>
-    <p>Hidden Lake Lights is a free Halloween and Christmas light display open to the public. Visitors can park, tune their radio to 90.1 FM, and watch thousands of lights flash in sync with music.</p>
-    <p><strong>Location:</strong> 28 Lost Valley Ct, Saint Peters, MO 63376</p>
-  </section>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Halloween & Christmas Synchronized Display</p>
+        <h1>Hidden Lake Lights</h1>
+        <p class="hero-text">
+          Park, tune your radio to <strong>90.1 FM</strong>, and watch thousands of lights dance to music in St. Peters, Missouri.
+        </p>
 
-  <section class="section dark-section" id="schedule">
-    <h2>2025 Christmas Schedule</h2>
-    <p><strong>Starts:</strong> November 29, 2025 at 6:00 PM</p>
-
-    <div class="schedule-grid">
-      <div class="schedule-card">
-        <h3>Monday - Thursday</h3>
-        <p>5 PM - 9 PM</p>
+        <div class="hero-buttons">
+          <a class="button primary" href="#schedule">View Show Schedule</a>
+          <a class="button glass" href="#gallery">See Photos</a>
+        </div>
       </div>
-      <div class="schedule-card">
-        <h3>Friday - Saturday</h3>
-        <p>5 PM - 10 PM</p>
+
+      <div class="scroll-cue">Scroll</div>
+    </section>
+
+    <section class="stats-wrap">
+      <div class="stat-card reveal">
+        <span class="stat-icon">📻</span>
+        <h3>90.1 FM</h3>
+        <p>Radio Station</p>
       </div>
-      <div class="schedule-card">
-        <h3>Sunday</h3>
-        <p>5 PM - 9:30 PM</p>
+
+      <div class="stat-card reveal">
+        <span class="stat-icon">🎄</span>
+        <h3>24,990</h3>
+        <p>Christmas Lights</p>
       </div>
-    </div>
-  </section>
 
-  <section class="section" id="donate">
-    <h2>Donations</h2>
-    <p>Hidden Lake Lights is free to visit. Donations help support Sts. Joachim and Ann Care Service.</p>
-    <a class="button" href="https://www.jacares.org/" target="_blank">Donate Here</a>
-  </section>
+      <div class="stat-card reveal">
+        <span class="stat-icon">🎃</span>
+        <h3>7,824</h3>
+        <p>Halloween Lights</p>
+      </div>
 
-  <section class="section dark-section" id="gallery">
-    <h2>Gallery</h2>
-    <p>Put your photos inside an <strong>images</strong> folder and update the file names in style.css.</p>
+      <div class="stat-card reveal">
+        <span class="stat-icon">✨</span>
+        <h3>Free</h3>
+        <p>Public Display</p>
+      </div>
+    </section>
 
-    <div class="gallery-grid">
-      <div class="gallery-photo photo-one"></div>
-      <div class="gallery-photo photo-two"></div>
-      <div class="gallery-photo photo-three"></div>
-    </div>
-  </section>
+    <section class="split-section" id="about">
+      <div class="split-text reveal">
+        <p class="eyebrow">About The Show</p>
+        <h2>Holiday lights with serious sparkle.</h2>
+        <p>
+          Hidden Lake Lights is a free Halloween and Christmas light display open to the public. Visitors can park,
+          tune their radio to 90.1 FM, and enjoy a synchronized show from the comfort of their car.
+        </p>
 
-  <section class="section" id="contact">
-    <h2>Contact</h2>
-    <p><strong>Email:</strong> <a href="mailto:hiddenlakelights@gmail.com">hiddenlakelights@gmail.com</a></p>
-    <p><strong>Facebook:</strong> @HiddenLakeLights</p>
-    <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@hiddenlakelights" target="_blank">Hidden Lake Lights YouTube</a></p>
-  </section>
+        <div class="feature-list">
+          <div class="feature">
+            <span>📍</span>
+            <div>
+              <h4>Location</h4>
+              <p>28 Lost Valley Ct, Saint Peters, MO 63376</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span>🎵</span>
+            <div>
+              <h4>Audio</h4>
+              <p>Tune to 90.1 FM when you arrive.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span>🚗</span>
+            <div>
+              <h4>Viewing</h4>
+              <p>Enjoy the show from your vehicle and please be respectful of neighbors.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="diagonal-photo about-photo reveal"></div>
+    </section>
+
+    <section class="section dark-panel" id="schedule">
+      <div class="section-heading reveal">
+        <p class="eyebrow">2025 Christmas Show</p>
+        <h2>Show Schedule</h2>
+        <p>Christmas Light Show begins November 29, 2025 at 6:00 PM.</p>
+      </div>
+
+      <div class="schedule-grid">
+        <article class="schedule-card reveal">
+          <h3>Monday - Thursday</h3>
+          <p>5 PM - 9 PM</p>
+        </article>
+
+        <article class="schedule-card featured reveal">
+          <div class="tag">Longest Nights</div>
+          <h3>Friday - Saturday</h3>
+          <p>5 PM - 10 PM</p>
+        </article>
+
+        <article class="schedule-card reveal">
+          <h3>Sunday</h3>
+          <p>5 PM - 9:30 PM</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="donation-section" id="donate">
+      <div class="donation-card reveal">
+        <p class="eyebrow">Donations</p>
+        <h2>Support Sts. Joachim and Ann Care Service</h2>
+        <p>
+          Hidden Lake Lights is free to visit. Donations help support Sts. Joachim and Ann Care Service.
+        </p>
+        <a class="button primary" href="https://www.jacares.org/" target="_blank" rel="noopener">Donate Here</a>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Gallery</p>
+        <h2>Lights In Action</h2>
+        <p>Replace these image file names in <strong>style.css</strong> with your real photo names.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-photo photo-one reveal"><span>Christmas Show</span></div>
+        <div class="gallery-photo photo-two reveal"><span>House Display</span></div>
+        <div class="gallery-photo photo-three reveal"><span>Holiday Lights</span></div>
+        <div class="gallery-photo photo-four reveal"><span>Halloween Show</span></div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Follow The Lights</h2>
+      </div>
+
+      <div class="contact-grid">
+        <a class="contact-card reveal" href="mailto:hiddenlakelights@gmail.com">
+          <span>✉️</span>
+          <h3>Email</h3>
+          <p>hiddenlakelights@gmail.com</p>
+        </a>
+
+        <div class="contact-card reveal">
+          <span>📘</span>
+          <h3>Facebook</h3>
+          <p>@HiddenLakeLights</p>
+        </div>
+
+        <a class="contact-card reveal" href="https://www.youtube.com/@hiddenlakelights" target="_blank" rel="noopener">
+          <span>▶️</span>
+          <h3>YouTube</h3>
+          <p>Watch show videos</p>
+        </a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© <span id="year"></span> Hidden Lake Lights</p>
+    <p>© <span id="year"></span> Hidden Lake Lights. St. Peters, Missouri.</p>
   </footer>
 
   <script src="script.js"></script>
