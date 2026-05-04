@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hidden Lake Lights | Halloween Show</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      background: radial-gradient(circle at center, #0a0000, #000000);
+      color: #ff6a00;
+    }
+
+    .halloween-hero {
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+        url("images/halloween-show.jpg") center/cover no-repeat;
+    }
+
+    .halloween-hero h1 {
+      font-size: 6rem;
+      color: #ff6a00;
+      text-shadow:
+        0 0 10px #ff6a00,
+        0 0 30px red,
+        0 0 60px darkred;
+    }
+
+    .halloween-section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .ghost {
+      font-size: 3rem;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="halloween-hero">
+    <div>
+      <h1>🎃 Halloween Show</h1>
+      <p>Tune to 90.1 FM and experience the spooky side of Hidden Lake Lights</p>
+    </div>
+  </section>
+
+  <section class="halloween-section">
+    <h2>Show Info</h2>
+    <p>Our Halloween show features darker music, intense lighting effects, and a fully spooky atmosphere.</p>
+
+    <div class="ghost">👻 👻 👻</div>
+  </section>
+
+  <section class="halloween-section">
+    <h2>Schedule</h2>
+    <p>October nights — times coming soon.</p>
+  </section>
+
+</body>
+</html>
