@@ -778,12 +778,12 @@ h2 {
 }
 
 .photo-three {
-  background-image: url("images/2025-christmas-2");
+  background-image: url("images/2025-christmas-2.JPG");
 }
 
 .photo-four {
   grid-column: span 2;
-  background-image: url("images/2025-halloween01.jpg");
+  background-image: url("images/2025-halloween-1.jpg");
 }
 
 /* ===== CONTACT ===== */
