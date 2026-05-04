@@ -1,0 +1,71 @@
+/* ===== WEBSITE COLORS ===== */
+/* ===== GALLERY PHOTOS ===== */
+.gallery-grid {
+  max-width: 1000px;
+  margin: 34px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.gallery-photo {
+  min-height: 260px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Change these image names to match your actual files */
+.photo-one {
+  background-image: url("images/2025-Christmas-1.JPEG");
+}
+
+.photo-two {
+  background-image: url("images/House-red-and-green-2022.jpg");
+}
+
+.photo-three {
+  background-image: url("images/Christmas-2023_edited.png");
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 24px;
+  background: #000;
+  color: var(--muted);
+}
+
+/* ===== MOBILE RESPONSIVE STYLING ===== */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 16px;
+    right: 16px;
+    flex-direction: column;
+    background: #111;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .info-cards,
+  .schedule-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-cards {
+    margin-top: 20px;
+  }
+}
