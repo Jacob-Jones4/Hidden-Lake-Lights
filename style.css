@@ -1056,3 +1056,66 @@ footer {
     grid-column: auto;
   }
 }
+/* ===== HALLOWEEN NAVBAR ===== */
+.halloween-header {
+  background: rgba(10, 0, 0, 0.9);
+  border-bottom: 1px solid rgba(255, 106, 0, 0.35);
+}
+
+.halloween-bulb {
+  background:
+    radial-gradient(circle at 30% 25%, white, #ffb347 18%, #ff6a00 45%, #7a0000 78%);
+  box-shadow:
+    0 0 12px #ff6a00,
+    0 0 30px rgba(255, 0, 0, 0.7);
+}
+
+/* Halloween menu button colors */
+.halloween-nav-links a {
+  background: rgba(255, 106, 0, 0.12);
+  border: 1px solid rgba(255, 106, 0, 0.35);
+}
+
+.halloween-nav-links a:hover {
+  background: linear-gradient(135deg, #ff6a00, #7a0000);
+  box-shadow:
+    0 0 14px rgba(255, 106, 0, 0.75),
+    0 0 26px rgba(255, 0, 0, 0.45);
+}
+
+/* Christmas button on Halloween page */
+.christmas-btn {
+  background: linear-gradient(135deg, #ff173d, #14ff7a) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  color: white !important;
+  box-shadow:
+    0 0 14px rgba(255, 23, 61, 0.55),
+    0 0 24px rgba(20, 255, 122, 0.45);
+  animation: christmasPulse 1.6s infinite ease-in-out;
+}
+
+.christmas-btn:hover {
+  transform: translateY(-3px) scale(1.1);
+  filter: brightness(1.2);
+}
+
+@keyframes christmasPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 10px rgba(255, 23, 61, 0.5),
+      0 0 20px rgba(20, 255, 122, 0.35);
+  }
+
+  50% {
+    box-shadow:
+      0 0 22px rgba(255, 23, 61, 0.9),
+      0 0 42px rgba(20, 255, 122, 0.75);
+  }
+}
+
+/* Halloween contact section */
+.halloween-contact-section {
+  background:
+    radial-gradient(circle at center, rgba(255, 106, 0, 0.12), transparent 35%),
+    #050000;
+}
