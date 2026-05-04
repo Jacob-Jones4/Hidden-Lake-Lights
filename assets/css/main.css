@@ -4162,10 +4162,13 @@ input, select, textarea {
   background-position: center center !important;
   background-repeat: no-repeat !important;
 
-  height: 300px !important;
-  min-height: 300px !important;
+  height: 360px !important;
+  min-height: 360px !important;
   padding: 5em 0 2em 0 !important;
-  overflow: hidden !important;
+
+  position: relative !important;
+  z-index: 2 !important;
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
 }
 
 #banner:before,
@@ -4173,14 +4176,14 @@ input, select, textarea {
   display: none !important;
 }
 
-/* REMOVE the diagonal cut from the About section */
 #About\ Us {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+  margin-top: -80px !important;
+  padding-top: 80px !important;
+  position: relative !important;
+  z-index: 1 !important;
   clip-path: none !important;
 }
 
-/* Remove Solid State's angled section overlay */
 .wrapper:before,
 .wrapper:after {
   display: none !important;
