@@ -3466,7 +3466,7 @@ input, select, textarea {
 			#banner {
 				padding: 7em 0 8.25em 0 ;
 				background-color: #2e3141;
-				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/2025-Christmas-1.JPEG");
+				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/2025 Christmas 1");
 				background-size: auto,
  cover;
 				background-position: center,
@@ -4154,3 +4154,19 @@ input, select, textarea {
 		}
 
 	}
+/* Hidden Lake Lights custom banner image */
+#banner {
+	background-image: linear-gradient(to top, rgba(46, 49, 65, 0.35), rgba(46, 49, 65, 0.35)), url("../../images/2025 Christmas 1.JPEG");
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+#banner .inner {
+	position: relative;
+	z-index: 1;
+}
