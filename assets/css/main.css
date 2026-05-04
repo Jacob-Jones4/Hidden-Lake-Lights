@@ -4156,16 +4156,16 @@ input, select, textarea {
 	}
 /* Hidden Lake Lights custom banner image */
 #banner {
-  background-image: linear-gradient(rgba(20, 24, 35, 0.45), rgba(20, 24, 35, 0.45)),
+  background-image: linear-gradient(rgba(20, 24, 35, 0.35), rgba(20, 24, 35, 0.35)),
     url("../../images/2025-Christmas-1.JPEG") !important;
   background-size: cover !important;
-  background-position: center 42% !important;
+  background-position: center center !important;
   background-repeat: no-repeat !important;
 
-  padding: 8em 0 2em 0 !important;
-  min-height: 360px !important;
-  height: 360px !important;
-  overflow: hidden;
+  height: 300px !important;
+  min-height: 300px !important;
+  padding: 5em 0 2em 0 !important;
+  overflow: hidden !important;
 }
 
 #banner:before,
@@ -4173,16 +4173,15 @@ input, select, textarea {
   display: none !important;
 }
 
-#banner .inner {
+/* REMOVE the diagonal cut from the About section */
+#About\ Us {
+  margin-top: 0 !important;
   padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  clip-path: none !important;
 }
 
-/* Smooth diagonal transition into the next section */
-#About\ Us {
-  margin-top: -90px !important;
-  padding-top: 90px !important;
-  position: relative;
-  z-index: 2;
-  clip-path: polygon(0 90px, 100% 0, 100% 100%, 0 100%);
+/* Remove Solid State's angled section overlay */
+.wrapper:before,
+.wrapper:after {
+  display: none !important;
 }
