@@ -1,179 +1,151 @@
-<!DOCTYPE HTML>
-<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== HEAD: Meta info, title, and styles ===== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hidden Lake Lights | Holiday Light Display</title>
 
--->
-<html>
-	<head>
-		<title>Hidden Lake Lights</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+  <!-- ===== STYLES: Entire website styling (colors, layout, animations) ===== -->
+  <style>
+    /* ===== ROOT COLORS ===== */
+    :root {
+      --red: #d71920;
+      --green: #0fa958;
+      --dark: #080808;
+      --white: #ffffff;
+    }
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+    /* ===== RESET DEFAULT BROWSER STYLES ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Hidden Lake Lights</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+    body {
+      font-family: Arial;
+      background: var(--dark);
+      color: var(--white);
+    }
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Donations</a></li>
-								<li><a href="elements.html">What's New?</a></li>
-								<li><a href="#">Log In</a></li>
-								<li><a href="#">Sign Up</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+    /* ===== TOP ANNOUNCEMENT BAR ===== */
+    .top-bar {
+      background: linear-gradient(90deg, var(--red), var(--green));
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+    }
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<h2>HIDDEN LAKE LIGHTS</h2>
-							<p>HALLOWEEN AND CHRISTMAS LIGHT DISPLAY IN ST PETERS MO</p>
-						</div>
-					</section>
+    /* ===== NAVIGATION BAR ===== */
+    header { position: sticky; top: 0; background: #111; }
 
-				<!-- About Us -->
-					<section id="About Us">
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+    }
 
-						<!-- One -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">About Us</h2>
-										<p>Hidden Lake Lights is a free Holiday Light display open to the public! Just sit in the warmth of your car and watch over 17,000 lights flash in sync with music! Be sure to tune your radio to 90.1 FM to hear the music.</p>
-									</div>
-								</div>
-							</section>
+    .nav-links { display: flex; gap: 15px; }
 
-						<!-- Two -->
-							<section id="two" class="wrapper alt spotlight style2">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Donate!</h2>
-										<p>As a way to give back to our community, we collect donations for the Sts. Joachim and Ann Care Service! We have a donation box and QR code located in front of the display to drop off cash, checks, canned food, and toys for families in need during the Holiday Season. You can donate online HERE!</p>
-										<a href="#" class="special">DONATE!</a>
-									</div>
-								</div>
-							</section>
+    /* ===== HERO SECTION (MAIN IMAGE + TITLE) ===== */
+    .hero {
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: url("images/2025-Christmas-1.JPEG") center/cover no-repeat;
+    }
 
-						<!-- Three -->
-							<section id="three" class="wrapper spotlight style3">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Follow Us on Facebook!</h2>
-										<p>We're pretty busy keeping the show running during the Holidays. Follow our Facebook page HERE to get the latest updates on show times, song lists, and more!</p>
-										<a href="https://facebook.com/hiddenlakelights"class="special"> FOLLOW US!</a>
-									</div>
-								</div>
-							</section>
+    /* ===== GENERAL SECTION STYLING ===== */
+    section { padding: 60px 20px; }
 
-						<!-- Four -->
-							<section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Vitae phasellus</h2>
-									<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Nisl placerat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3 class="major">Ante fermentum</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<h3 class="major">Fusce consequat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-									</section>
-									<ul class="actions">
-										<li><a href="#" class="button">Browse All</a></li>
-									</ul>
-								</div>
-							</section>
+    /* ===== ABOUT SECTION ===== */
+    #about { background: #111; }
 
-					</section>
+    /* ===== SCHEDULE SECTION ===== */
+    #schedule { background: #181818; }
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="icon solid fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
-								</li>
-								<li class="icon solid fa-phone">(000) 000-0000</li>
-								<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-								<li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
-								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
+    /* ===== DONATION SECTION ===== */
+    #donate { background: #222; }
 
-			</div>
+    /* ===== GALLERY SECTION ===== */
+    #gallery { background: #111; }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    /* ===== CONTACT SECTION ===== */
+    #contact { background: #181818; }
 
-	</body>
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== TOP BAR: Announcement text ===== -->
+  <div class="top-bar">2025 Christmas Light Show starts November 29 at 6:00 PM</div>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header>
+    <nav class="nav">
+      <!-- Logo / Title -->
+      <div>Hidden Lake Lights</div>
+
+      <!-- Navigation Links -->
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#donate">Donate</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO SECTION (MAIN LANDING AREA) ===== -->
+  <section class="hero" id="home">
+    <div>
+      <h1>Hidden Lake Lights</h1>
+      <p>Drive up, tune to 90.1 FM, and enjoy the show.</p>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION (INFO ABOUT SHOW) ===== -->
+  <section id="about">
+    <h2>About</h2>
+    <p>This is where you describe your light show, location, and details.</p>
+  </section>
+
+  <!-- ===== SCHEDULE SECTION (SHOW TIMES) ===== -->
+  <section id="schedule">
+    <h2>Schedule</h2>
+    <p>Put your show times here.</p>
+  </section>
+
+  <!-- ===== DONATION SECTION ===== -->
+  <section id="donate">
+    <h2>Donate</h2>
+    <p>Link your donation page here.</p>
+  </section>
+
+  <!-- ===== GALLERY SECTION (PHOTOS) ===== -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <p>Add your photos here.</p>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email, social media, etc.</p>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© Hidden Lake Lights</p>
+  </footer>
+
+</body>
 </html>
