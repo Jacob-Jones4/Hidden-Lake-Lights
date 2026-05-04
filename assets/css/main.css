@@ -4187,3 +4187,17 @@ input, select, textarea {
   position: relative !important;
   z-index: 1 !important;
 }
+/* ABOUT US IMAGE BACKGROUND */
+.wrapper.style1 {
+  background-image: linear-gradient(rgba(20, 24, 35, 0.6), rgba(20, 24, 35, 0.6)),
+    url("../../images/2025-christmas-2.JPG") !important;
+
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Remove the template color overlay */
+.wrapper.style1:before {
+  display: none !important;
+}
