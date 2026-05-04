@@ -4156,17 +4156,33 @@ input, select, textarea {
 	}
 /* Hidden Lake Lights custom banner image */
 #banner {
-	background-image: linear-gradient(to top, rgba(46, 49, 65, 0.35), rgba(46, 49, 65, 0.35)), url("../../images/2025-Christmas-1.JPEG");
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: scroll;
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
+  background-image: linear-gradient(rgba(20, 24, 35, 0.45), rgba(20, 24, 35, 0.45)),
+    url("../../images/2025-Christmas-1.JPEG") !important;
+  background-size: cover !important;
+  background-position: center 42% !important;
+  background-repeat: no-repeat !important;
+
+  padding: 8em 0 2em 0 !important;
+  min-height: 360px !important;
+  height: 360px !important;
+  overflow: hidden;
+}
+
+#banner:before,
+#banner:after {
+  display: none !important;
 }
 
 #banner .inner {
-	position: relative;
-	z-index: 1;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Smooth diagonal transition into the next section */
+#About\ Us {
+  margin-top: -90px !important;
+  padding-top: 90px !important;
+  position: relative;
+  z-index: 2;
+  clip-path: polygon(0 90px, 100% 0, 100% 100%, 0 100%);
 }
