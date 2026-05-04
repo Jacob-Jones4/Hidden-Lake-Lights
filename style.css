@@ -1376,4 +1376,25 @@ body:has(.halloween-hero) {
   .halloween-hero h1 {
     font-size: 4.4rem;
   }
+  /* ===== CONTACT ICON LOGOS ===== */
+.contact-card i {
+  font-size: 2.4rem;
+}
+
+/* Facebook blue */
+.contact-card i.fa-facebook {
+  color: #1877f2;
+  text-shadow: 0 0 10px rgba(24, 119, 242, 0.6);
+}
+
+/* YouTube red */
+.contact-card i.fa-youtube {
+  color: #ff0000;
+  text-shadow: 0 0 12px rgba(255, 0, 0, 0.7);
+}
+
+/* Email */
+.contact-card i.fa-envelope {
+  color: #ffd166;
+}
 }
