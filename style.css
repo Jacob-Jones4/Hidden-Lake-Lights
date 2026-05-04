@@ -844,3 +844,162 @@ footer {
   50% { opacity: 0.7; }
   100% { opacity: 1; }
 }
+/* =====================================================
+  NAV MENU BUTTON UPGRADE
+  Makes all menu items look like buttons
+===================================================== */
+
+.nav-links a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 9px 15px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  color: white;
+  font-weight: 900;
+  overflow: visible;
+
+  transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: white;
+  transform: translateY(-2px) scale(1.04);
+  background: linear-gradient(135deg, rgba(255, 23, 61, 0.85), rgba(20, 255, 122, 0.75));
+  box-shadow:
+    0 0 14px rgba(255, 23, 61, 0.55),
+    0 0 24px rgba(20, 255, 122, 0.35);
+}
+
+/* Removes old underline animation from menu links */
+.nav-links a::after {
+  display: none;
+}
+
+/* =====================================================
+  BLOOD DRIP HALLOWEEN BUTTON
+===================================================== */
+
+.halloween-btn {
+  position: relative;
+  isolation: isolate;
+
+  background: linear-gradient(135deg, #ff6a00, #7a0000) !important;
+  border: 1px solid rgba(255, 106, 0, 0.9) !important;
+
+  color: #fff !important;
+  text-shadow:
+    0 0 8px #ff6a00,
+    0 0 18px #ff0000;
+
+  box-shadow:
+    0 0 12px rgba(255, 106, 0, 0.85),
+    0 0 26px rgba(255, 0, 0, 0.55);
+
+  animation: halloweenPulse 1.25s infinite ease-in-out;
+}
+
+/* Blood drips */
+.halloween-btn::before {
+  content: "";
+  position: absolute;
+  left: 18%;
+  bottom: -12px;
+
+  width: 8px;
+  height: 18px;
+
+  background: #8b0000;
+  border-radius: 0 0 999px 999px;
+
+  box-shadow:
+    26px 5px 0 #b00000,
+    55px -3px 0 #700000,
+    82px 7px 0 #a00000;
+
+  z-index: -1;
+  animation: bloodDrip 1.6s infinite ease-in-out;
+}
+
+/* Blood drops */
+.halloween-btn::after {
+  content: "";
+  position: absolute;
+  left: 31%;
+  bottom: -22px;
+
+  width: 7px;
+  height: 7px;
+
+  background: #b00000;
+  border-radius: 50%;
+
+  box-shadow:
+    42px 6px 0 #7a0000,
+    74px -2px 0 #b00000;
+
+  z-index: -1;
+  animation: bloodDrops 1.6s infinite ease-in-out;
+}
+
+.halloween-btn:hover {
+  transform: translateY(-3px) scale(1.12);
+  filter: brightness(1.2);
+}
+
+/* Pulsing spooky glow */
+@keyframes halloweenPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 10px rgba(255, 106, 0, 0.8),
+      0 0 24px rgba(255, 0, 0, 0.45);
+  }
+
+  50% {
+    transform: scale(1.07);
+    box-shadow:
+      0 0 20px rgba(255, 106, 0, 1),
+      0 0 42px rgba(255, 0, 0, 0.8);
+  }
+}
+
+/* Moving blood drip effect */
+@keyframes bloodDrip {
+  0%, 100% {
+    height: 14px;
+    opacity: 0.85;
+  }
+
+  50% {
+    height: 24px;
+    opacity: 1;
+  }
+}
+
+/* Moving drops effect */
+@keyframes bloodDrops {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+/* =====================================================
+  MOVE SCROLL ANIMATION UP
+===================================================== */
+
+.scroll-cue {
+  bottom: 95px;
+}
