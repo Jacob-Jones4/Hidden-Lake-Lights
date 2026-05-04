@@ -1,151 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- ===== HEAD: Meta info, title, and styles ===== -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hidden Lake Lights | Holiday Light Display</title>
 
-  <!-- ===== STYLES: Entire website styling (colors, layout, animations) ===== -->
-  <style>
-    /* ===== ROOT COLORS ===== */
-    :root {
-      --red: #d71920;
-      --green: #0fa958;
-      --dark: #080808;
-      --white: #ffffff;
-    }
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="section" id="about">
+    <h2>About The Show</h2>
+    <p>Hidden Lake Lights is a free Halloween and Christmas light display open to the public. Visitors can park, tune their radio to 90.1 FM, and watch thousands of lights flash in sync with music.</p>
+    <p><strong>Location:</strong> 28 Lost Valley Ct, Saint Peters, MO 63376</p>
+  </section>
 
-    /* ===== RESET DEFAULT BROWSER STYLES ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+  <!-- ===== SCHEDULE SECTION ===== -->
+  <section class="section dark-section" id="schedule">
+    <h2>2025 Christmas Schedule</h2>
+    <p><strong>Starts:</strong> November 29, 2025 at 6:00 PM</p>
 
-    body {
-      font-family: Arial;
-      background: var(--dark);
-      color: var(--white);
-    }
-
-    /* ===== TOP ANNOUNCEMENT BAR ===== */
-    .top-bar {
-      background: linear-gradient(90deg, var(--red), var(--green));
-      text-align: center;
-      padding: 10px;
-      font-weight: bold;
-    }
-
-    /* ===== NAVIGATION BAR ===== */
-    header { position: sticky; top: 0; background: #111; }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 15px;
-    }
-
-    .nav-links { display: flex; gap: 15px; }
-
-    /* ===== HERO SECTION (MAIN IMAGE + TITLE) ===== */
-    .hero {
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: url("images/2025-Christmas-1.JPEG") center/cover no-repeat;
-    }
-
-    /* ===== GENERAL SECTION STYLING ===== */
-    section { padding: 60px 20px; }
-
-    /* ===== ABOUT SECTION ===== */
-    #about { background: #111; }
-
-    /* ===== SCHEDULE SECTION ===== */
-    #schedule { background: #181818; }
-
-    /* ===== DONATION SECTION ===== */
-    #donate { background: #222; }
-
-    /* ===== GALLERY SECTION ===== */
-    #gallery { background: #111; }
-
-    /* ===== CONTACT SECTION ===== */
-    #contact { background: #181818; }
-
-    /* ===== FOOTER ===== */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #000;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- ===== TOP BAR: Announcement text ===== -->
-  <div class="top-bar">2025 Christmas Light Show starts November 29 at 6:00 PM</div>
-
-  <!-- ===== HEADER / NAVBAR ===== -->
-  <header>
-    <nav class="nav">
-      <!-- Logo / Title -->
-      <div>Hidden Lake Lights</div>
-
-      <!-- Navigation Links -->
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#donate">Donate</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+    <div class="schedule-grid">
+      <div class="schedule-card">
+        <h3>Monday - Thursday</h3>
+        <p>5 PM - 9 PM</p>
       </div>
-    </nav>
-  </header>
-
-  <!-- ===== HERO SECTION (MAIN LANDING AREA) ===== -->
-  <section class="hero" id="home">
-    <div>
-      <h1>Hidden Lake Lights</h1>
-      <p>Drive up, tune to 90.1 FM, and enjoy the show.</p>
+      <div class="schedule-card">
+        <h3>Friday - Saturday</h3>
+        <p>5 PM - 10 PM</p>
+      </div>
+      <div class="schedule-card">
+        <h3>Sunday</h3>
+        <p>5 PM - 9:30 PM</p>
+      </div>
     </div>
   </section>
 
-  <!-- ===== ABOUT SECTION (INFO ABOUT SHOW) ===== -->
-  <section id="about">
-    <h2>About</h2>
-    <p>This is where you describe your light show, location, and details.</p>
-  </section>
-
-  <!-- ===== SCHEDULE SECTION (SHOW TIMES) ===== -->
-  <section id="schedule">
-    <h2>Schedule</h2>
-    <p>Put your show times here.</p>
-  </section>
-
   <!-- ===== DONATION SECTION ===== -->
-  <section id="donate">
-    <h2>Donate</h2>
-    <p>Link your donation page here.</p>
+  <section class="section" id="donate">
+    <h2>Donations</h2>
+    <p>Hidden Lake Lights is free to visit. Donations help support Sts. Joachim and Ann Care Service.</p>
+    <a class="button" href="https://www.jacares.org/" target="_blank" rel="noopener">Donate Here</a>
   </section>
 
-  <!-- ===== GALLERY SECTION (PHOTOS) ===== -->
-  <section id="gallery">
+  <!-- ===== GALLERY SECTION ===== -->
+  <section class="section dark-section" id="gallery">
     <h2>Gallery</h2>
-    <p>Add your photos here.</p>
+    <p>Put your photos inside an <strong>images</strong> folder and update the file names in style.css.</p>
+
+    <div class="gallery-grid">
+      <div class="gallery-photo photo-one"></div>
+      <div class="gallery-photo photo-two"></div>
+      <div class="gallery-photo photo-three"></div>
+    </div>
   </section>
 
   <!-- ===== CONTACT SECTION ===== -->
-  <section id="contact">
+  <section class="section" id="contact">
     <h2>Contact</h2>
-    <p>Email, social media, etc.</p>
+    <p><strong>Email:</strong> <a href="mailto:hiddenlakelights@gmail.com">hiddenlakelights@gmail.com</a></p>
+    <p><strong>Facebook:</strong> @HiddenLakeLights</p>
+    <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@hiddenlakelights" target="_blank" rel="noopener">Hidden Lake Lights YouTube</a></p>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <p>© Hidden Lake Lights</p>
+    <p>© <span id="year"></span> Hidden Lake Lights</p>
   </footer>
 
+  <!-- Connects this HTML file to your JavaScript file -->
+  <script src="script.js"></script>
 </body>
 </html>
