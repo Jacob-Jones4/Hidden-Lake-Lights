@@ -1749,3 +1749,10 @@ body:has(.halloween-hero) {
     opacity: 0.65;
   }
 }
+.donation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
