@@ -6,15 +6,12 @@
 
   <title>Hidden Lake Lights | Halloween Show</title>
 
-  <!-- Uses your SAME style.css -->
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="images/favicon-orange.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-
-  <!-- ===== HALLOWEEN NAVBAR ===== -->
   <header class="site-header halloween-header">
     <nav class="nav">
       <a class="logo" href="halloween.html">
@@ -22,119 +19,113 @@
         <span>Hidden Lake Lights | Halloween Edition</span>
       </a>
 
-      <button class="menu-btn" id="menuBtn">☰</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
 
       <div class="nav-links halloween-nav-links" id="navLinks">
         <a href="#halloween-home">Home</a>
         <a href="#halloween-schedule">Schedule</a>
         <a href="#halloween-gallery">Gallery</a>
         <a href="#halloween-contact">Contact</a>
-
-        <!-- 🎄 Back to Christmas page -->
         <a href="index.html" class="christmas-btn">🎄 Christmas</a>
       </div>
     </nav>
   </header>
 
-<!-- ===== HERO ===== -->
-<section class="halloween-hero" id="halloween-home">
-  <div class="lightning"></div>
+  <main>
+    <section class="halloween-hero" id="halloween-home">
+      <div class="lightning"></div>
 
-  <div class="bats" aria-hidden="true">
-    <span class="bat">🦇</span>
-    <span class="bat">🦇</span>
-    <span class="bat">🦇</span>
-  </div>
+      <div class="bats" aria-hidden="true">
+        <span class="bat">🦇</span>
+        <span class="bat">🦇</span>
+        <span class="bat">🦇</span>
+      </div>
 
-  <div>
-    <h1>🎃 Halloween Show</h1>
-    <p>Tune to 90.1 FM and experience the spooky side of Hidden Lake Lights</p>
-  </div>
+      <div class="halloween-hero-content">
+        <h1>🎃 Halloween Show</h1>
+        <p>Tune to 90.1 FM and experience the spooky side of Hidden Lake Lights</p>
+      </div>
 
-  <div class="pumpkin-row" aria-hidden="true">
-    <span class="pumpkin">🎃</span>
-    <span class="pumpkin">👻</span>
-    <span class="pumpkin">🎃</span>
-  </div>
-</section>
+      <div class="pumpkin-row" aria-hidden="true">
+        <span class="pumpkin">🎃</span>
+        <span class="pumpkin">👻</span>
+        <span class="pumpkin">🎃</span>
+      </div>
+    </section>
 
-  <!-- ===== SCHEDULE ===== -->
-  <section class="section dark-panel halloween-schedule" id="halloween-schedule">
-    <div class="section-heading">
-      <p class="eyebrow">Halloween Show</p>
-      <h2>Show Schedule</h2>
-      <p>Same nightly times — just way spookier.</p>
-    </div>
+    <section class="section dark-panel halloween-schedule" id="halloween-schedule">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Halloween Show</p>
+        <h2>Show Schedule</h2>
+        <p>Same nightly times — just way spookier.</p>
+      </div>
 
-    <div class="schedule-grid">
-      <article class="schedule-card">
-        <h3>Monday - Thursday</h3>
-        <p>5 PM - 9 PM</p>
-      </article>
+      <div class="schedule-grid">
+        <article class="schedule-card reveal">
+          <h3>Monday - Thursday</h3>
+          <p>5 PM - 9 PM</p>
+        </article>
 
-      <article class="schedule-card featured">
-        <div class="tag">Peak Nights</div>
-        <h3>Friday - Saturday</h3>
-        <p>5 PM - 10 PM</p>
-      </article>
+        <article class="schedule-card featured reveal">
+          <div class="tag">Peak Nights</div>
+          <h3>Friday - Saturday</h3>
+          <p>5 PM - 10 PM</p>
+        </article>
 
-      <article class="schedule-card">
-        <h3>Sunday</h3>
-        <p>5 PM - 9:30 PM</p>
-      </article>
-    </div>
-  </section>
+        <article class="schedule-card reveal">
+          <h3>Sunday</h3>
+          <p>5 PM - 9:30 PM</p>
+        </article>
+      </div>
+    </section>
 
-  <!-- ===== GALLERY ===== -->
-  <section class="section halloween-gallery-section" id="halloween-gallery">
-    <div class="section-heading">
-      <p class="eyebrow">Gallery</p>
-      <h2>Spooky Lights</h2>
-      <p>Replace these images in your images folder.</p>
-    </div>
+    <section class="section halloween-gallery-section" id="halloween-gallery">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Gallery</p>
+        <h2>Spooky Lights</h2>
+        <p>Replace these images in your images folder.</p>
+      </div>
 
-    <div class="gallery-grid">
-      <div class="gallery-photo halloween-photo-one"><span>Halloween Show</span></div>
-      <div class="gallery-photo halloween-photo-two"><span>Spooky Display</span></div>
-      <div class="gallery-photo halloween-photo-three"><span>Orange Glow</span></div>
-      <div class="gallery-photo halloween-photo-four"><span>Haunted Setup</span></div>
-    </div>
-  </section>
+      <div class="gallery-grid">
+        <div class="gallery-photo halloween-photo-one reveal"><span>Halloween Show</span></div>
+        <div class="gallery-photo halloween-photo-two reveal"><span>Spooky Display</span></div>
+        <div class="gallery-photo halloween-photo-three reveal"><span>Orange Glow</span></div>
+        <div class="gallery-photo halloween-photo-four reveal"><span>Haunted Setup</span></div>
+      </div>
+    </section>
 
-  <!-- ===== CONTACT ===== -->
-  <section class="section halloween-contact-section" id="halloween-contact">
-    <div class="section-heading">
-      <p class="eyebrow">Contact</p>
-      <h2>Follow The Frights</h2>
-    </div>
+    <section class="section halloween-contact-section" id="halloween-contact">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Follow The Frights</h2>
+      </div>
 
-    <div class="contact-grid">
-      <a class="contact-card reveal" href="mailto:hiddenlakelights@gmail.com">
+      <div class="contact-grid">
+        <a class="contact-card reveal" href="mailto:hiddenlakelights@gmail.com">
           <span><i class="fas fa-envelope"></i></span>
           <h3>Email</h3>
           <p>hiddenlakelights@gmail.com</p>
         </a>
 
-        <a class="contact-card reveal" href="https://www.facebook.com/hiddenlakelights" target="_blank">
+        <a class="contact-card reveal" href="https://www.facebook.com/hiddenlakelights" target="_blank" rel="noopener">
           <span><i class="fab fa-facebook"></i></span>
-              <h3>Facebook</h3>
+          <h3>Facebook</h3>
           <p>@HiddenLakeLights</p>
         </a>
-        <a class="contact-card reveal" href="https://www.youtube.com/@hiddenlakelights" target="_blank">
+
+        <a class="contact-card reveal" href="https://www.youtube.com/@hiddenlakelights" target="_blank" rel="noopener">
           <span><i class="fab fa-youtube"></i></span>
           <h3>YouTube</h3>
           <p>Watch show videos</p>
-      </a>
-    </div>
-  </section>
+        </a>
+      </div>
+    </section>
+  </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer>
     <p>© <span id="year"></span> Hidden Lake Lights</p>
   </footer>
 
-  <!-- ===== JAVASCRIPT ===== -->
   <script src="script.js"></script>
-
 </body>
 </html>
