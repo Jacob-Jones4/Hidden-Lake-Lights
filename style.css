@@ -1763,3 +1763,34 @@ body:has(.halloween-hero) {
   color: var(--muted);
   font-weight: 700;
 }
+.best-year-card {
+  width: min(900px, calc(100% - 32px));
+  margin: 0 auto 34px;
+  padding: clamp(32px, 6vw, 58px);
+  text-align: center;
+  border-radius: 42px;
+  background:
+    linear-gradient(135deg, rgba(255, 209, 102, 0.24), rgba(255, 23, 61, 0.18), rgba(20, 255, 122, 0.16)),
+    rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 209, 102, 0.45);
+  box-shadow:
+    0 0 28px rgba(255, 209, 102, 0.28),
+    0 24px 90px rgba(0,0,0,0.45);
+}
+
+.best-year-card h2 {
+  color: var(--gold);
+  text-shadow:
+    0 0 18px rgba(255, 209, 102, 0.65),
+    0 0 40px rgba(255, 23, 61, 0.35);
+}
+
+.best-year-card h3 {
+  font-size: clamp(1.7rem, 4vw, 3rem);
+  margin: 8px 0 10px;
+}
+
+.best-year-card p:last-child {
+  color: var(--muted);
+  font-weight: 700;
+}
