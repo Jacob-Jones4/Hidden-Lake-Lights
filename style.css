@@ -1948,3 +1948,7 @@ body:has(.halloween-hero) {
 .logo span {
   font-size: 1.5rem;
 }
+/* ===== SMALLER LOGO TEXT ON HALLOWEEN PAGE ===== */
+.halloween-header .logo span {
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+}
