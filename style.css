@@ -1945,3 +1945,6 @@ body:has(.halloween-hero) {
     drop-shadow(0 0 28px var(--green));
   transform: scale(1.1);
 }
+.logo span {
+  font-size: 1.5rem;
+}
