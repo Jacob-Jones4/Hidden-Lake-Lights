@@ -1698,3 +1698,54 @@ body:has(.halloween-hero) {
 .halloween-gallery-section .gallery-photo:hover::before {
   opacity: 1;
 }
+/* ===== HALLOWEEN TOP BAR ===== */
+.halloween-top-bar {
+  position: relative;
+  z-index: 2000;
+  background: linear-gradient(90deg, #1a001f, #ff6a00, #7a0000, #3b0066);
+  background-size: 300% 100%;
+  animation: halloweenGradientMove 6s ease-in-out infinite;
+  text-align: center;
+  padding: 10px 16px;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  color: white;
+  box-shadow:
+    0 8px 30px rgba(255, 106, 0, 0.25),
+    0 0 24px rgba(120, 0, 0, 0.35);
+}
+
+.halloween-pulse-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #ff6a00;
+  box-shadow:
+    0 0 12px #ff6a00,
+    0 0 24px #7a0000;
+  animation: halloweenPulseDot 1.4s infinite;
+}
+
+@keyframes halloweenGradientMove {
+  0%, 100% {
+    background-position: left;
+  }
+
+  50% {
+    background-position: right;
+  }
+}
+
+@keyframes halloweenPulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.45);
+    opacity: 0.65;
+  }
+}
