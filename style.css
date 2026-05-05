@@ -926,9 +926,9 @@ body:has(.halloween-hero) {
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(circle at 22% 34%, rgba(255, 106, 0, 0.5), transparent 28%),
-    radial-gradient(circle at 75% 38%, rgba(140, 0, 0, 0.55), transparent 34%),
-    linear-gradient(120deg, rgba(0,0,0,0.95), transparent 48%, rgba(0,0,0,0.75));
+    radial-gradient(circle at 22% 34%, rgba(255, 106, 0, 0.18), transparent 32%),
+    radial-gradient(circle at 75% 38%, rgba(140, 0, 0, 0.22), transparent 36%),
+    linear-gradient(120deg, rgba(0,0,0,0.92), transparent 48%, rgba(0,0,0,0.82));
   animation: hauntedGlow 4s infinite alternate;
 }
 
