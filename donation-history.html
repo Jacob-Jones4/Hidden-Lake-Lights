@@ -35,7 +35,7 @@
    <div class="total-raised-card">
   <span class="stat-icon">📈</span>
   <p class="eyebrow">Total Raised Since 2018</p>
-  <h2>$13,255.88</h2>
+  <h2 class="count-up" data-target="13255.88">$0</h2>
   <p>Thank you to everyone who has donated over the years!</p>
 </div>
 
@@ -109,5 +109,43 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+  const counters = document.querySelectorAll(".count-up");
+
+  const countUp = (counter) => {
+    const target = Number(counter.dataset.target);
+    const duration = 1800;
+    const startTime = performance.now();
+
+    const update = (currentTime) => {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const value = target * progress;
+
+      counter.textContent = value.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.counted) {
+        entry.target.dataset.counted = "true";
+        countUp(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => observer.observe(counter));
+</script>
 </body>
 </html>
