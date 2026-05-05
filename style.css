@@ -1398,3 +1398,98 @@ body:has(.halloween-hero) {
   color: #ffd166;
 }
 }
+/* =====================================================
+  CONTACT ICON UPGRADE (INSANE MODE)
+===================================================== */
+
+.contact-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ICON BASE */
+.contact-card i {
+  font-size: 2.5rem;
+  transition: 0.3s ease;
+}
+
+/* FACEBOOK */
+.contact-card i.fa-facebook {
+  color: #1877f2;
+  text-shadow:
+    0 0 10px rgba(24, 119, 242, 0.6),
+    0 0 25px rgba(24, 119, 242, 0.4);
+}
+
+/* YOUTUBE */
+.contact-card i.fa-youtube {
+  color: #ff0000;
+  text-shadow:
+    0 0 12px rgba(255, 0, 0, 0.7),
+    0 0 30px rgba(255, 0, 0, 0.5);
+}
+
+/* EMAIL */
+.contact-card i.fa-envelope {
+  color: #ffd166;
+  text-shadow:
+    0 0 10px rgba(255, 209, 102, 0.6),
+    0 0 25px rgba(255, 209, 102, 0.4);
+}
+
+/* ===== LIGHT GLOW PULSE ===== */
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 23, 61, 0.6),
+    rgba(20, 255, 122, 0.6),
+    rgba(255, 209, 102, 0.6)
+  );
+
+  opacity: 0;
+  filter: blur(18px);
+  transition: 0.3s ease;
+  z-index: 0;
+}
+
+/* ===== HOVER EFFECT ===== */
+.contact-card:hover {
+  transform: translateY(-8px) scale(1.04);
+}
+
+.contact-card:hover::before {
+  opacity: 1;
+}
+
+.contact-card:hover i {
+  transform: scale(1.25) rotate(-3deg);
+  filter: brightness(1.3);
+}
+
+/* ===== SUBTLE FLOAT ANIMATION ===== */
+.contact-card {
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+.contact-card:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+.contact-card:nth-child(3) {
+  animation-delay: 3s;
+}
+
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
