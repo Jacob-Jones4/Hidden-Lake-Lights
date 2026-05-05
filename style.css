@@ -1823,3 +1823,16 @@ body:has(.halloween-hero) {
 .count-up {
   display: inline-block;
 }
+.total-raised-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.total-raised-card .eyebrow {
+  margin-bottom: 10px;
+}
+
+.total-raised-card h2 {
+  margin: 6px 0 10px;
+}
