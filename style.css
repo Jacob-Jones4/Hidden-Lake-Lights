@@ -1578,3 +1578,106 @@ body:has(.halloween-hero) {
     margin-top: 24px;
   }
 }
+/* =====================================================
+  #6 PARALLAX SCROLL FEEL
+===================================================== */
+
+.hero,
+.halloween-hero {
+  background-attachment: fixed;
+}
+
+/* Mobile fix: fixed backgrounds can be glitchy on phones */
+@media (max-width: 900px) {
+  .hero,
+  .halloween-hero {
+    background-attachment: scroll;
+  }
+}
+
+/* =====================================================
+  #7 EXTRA HALLOWEEN SPOOKY EFFECTS
+===================================================== */
+
+/* random ghost drift */
+.halloween-ghost {
+  position: fixed;
+  left: -80px;
+  top: 65%;
+  z-index: 3000;
+  font-size: 3rem;
+  pointer-events: none;
+  opacity: 0;
+  filter:
+    drop-shadow(0 0 12px rgba(255,255,255,0.8))
+    drop-shadow(0 0 26px rgba(255,106,0,0.4));
+  animation: ghostDrift 18s infinite ease-in-out;
+}
+
+@keyframes ghostDrift {
+  0%, 72% {
+    transform: translateX(-120px) translateY(0);
+    opacity: 0;
+  }
+
+  76% {
+    opacity: 0.85;
+  }
+
+  88% {
+    transform: translateX(55vw) translateY(-60px);
+    opacity: 0.75;
+  }
+
+  100% {
+    transform: translateX(115vw) translateY(-20px);
+    opacity: 0;
+  }
+}
+
+/* spooky text flicker on Halloween headings */
+.halloween-gallery-section h2,
+.halloween-schedule h2,
+.halloween-contact-section h2 {
+  animation: halloweenHeadingFlicker 5s infinite;
+}
+
+@keyframes halloweenHeadingFlicker {
+  0%, 100% {
+    filter: brightness(1);
+    text-shadow: 0 0 18px rgba(255,106,0,0.45);
+  }
+
+  48% {
+    filter: brightness(0.85);
+  }
+
+  50% {
+    filter: brightness(1.55);
+    text-shadow:
+      0 0 14px rgba(255,106,0,0.9),
+      0 0 34px rgba(255,0,0,0.65);
+  }
+
+  52% {
+    filter: brightness(0.9);
+  }
+}
+
+/* extra haunted glow on Halloween cards */
+.halloween-gallery-section .gallery-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,106,0,0.22), transparent 28%),
+    radial-gradient(circle at 70% 80%, rgba(120,0,0,0.25), transparent 30%);
+  opacity: 0;
+  transition: 0.35s ease;
+  pointer-events: none;
+}
+
+.halloween-gallery-section .gallery-photo:hover::before {
+  opacity: 1;
+}
