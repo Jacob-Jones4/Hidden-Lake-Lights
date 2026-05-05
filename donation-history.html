@@ -129,8 +129,10 @@
       });
 
       if (progress < 1) {
-        requestAnimationFrame(update);
-      }
+  requestAnimationFrame(update);
+} else {
+  counter.classList.add("count-finished");
+}
     };
 
     requestAnimationFrame(update);
