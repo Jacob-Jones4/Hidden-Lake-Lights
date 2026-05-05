@@ -1952,3 +1952,26 @@ body:has(.halloween-hero) {
 .halloween-header .logo span {
   font-size: clamp(0.95rem, 1.6vw, 1.2rem);
 }
+.button {
+  position: relative;
+  overflow: hidden;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.button:hover::after {
+  opacity: 1;
+  transform: translateX(100%);
+}
