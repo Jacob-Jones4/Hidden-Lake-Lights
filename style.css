@@ -1521,3 +1521,60 @@ body:has(.halloween-hero) {
     0 0 40px rgba(120, 0, 0, 0.5),
     0 0 80px rgba(255, 0, 0, 0.4);
 }
+/* ===== DONATION STATS CARDS ===== */
+.donation-stats-wrap {
+  width: min(1120px, calc(100% - 32px));
+  margin: -40px auto 80px;
+  position: relative;
+  z-index: 10;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.donation-stat-card {
+  padding: 26px 20px;
+  text-align: center;
+  border-radius: var(--radius);
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.17),
+    rgba(255,255,255,0.07)
+  );
+
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+
+  transition: 0.25s ease;
+}
+
+.donation-stat-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow:
+    0 0 20px rgba(255, 23, 61, 0.35),
+    0 0 40px rgba(20, 255, 122, 0.25);
+}
+
+.donation-stat-card h3 {
+  margin-top: 8px;
+  color: var(--gold);
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  line-height: 1;
+}
+
+.donation-stat-card p {
+  color: var(--muted);
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .donation-stats-wrap {
+    grid-template-columns: 1fr;
+    margin-top: 24px;
+  }
+}
