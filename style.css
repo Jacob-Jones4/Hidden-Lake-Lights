@@ -1794,3 +1794,29 @@ body:has(.halloween-hero) {
   color: var(--muted);
   font-weight: 700;
 }
+.total-raised-card {
+  width: min(900px, calc(100% - 32px));
+  margin: 0 auto 42px;
+  padding: clamp(30px, 6vw, 56px);
+  text-align: center;
+  border-radius: 42px;
+  background:
+    linear-gradient(135deg, rgba(20, 255, 122, 0.22), rgba(76, 201, 240, 0.18), rgba(255, 209, 102, 0.14)),
+    rgba(255,255,255,0.08);
+  border: 1px solid rgba(20, 255, 122, 0.38);
+  box-shadow:
+    0 0 30px rgba(20, 255, 122, 0.22),
+    0 24px 90px rgba(0,0,0,0.45);
+}
+
+.total-raised-card h2 {
+  color: var(--green);
+  text-shadow:
+    0 0 18px rgba(20, 255, 122, 0.7),
+    0 0 42px rgba(76, 201, 240, 0.35);
+}
+
+.total-raised-card p:last-child {
+  color: var(--muted);
+  font-weight: 700;
+}
