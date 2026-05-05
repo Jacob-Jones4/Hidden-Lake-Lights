@@ -1820,3 +1820,6 @@ body:has(.halloween-hero) {
   color: var(--muted);
   font-weight: 700;
 }
+.count-up {
+  display: inline-block;
+}
