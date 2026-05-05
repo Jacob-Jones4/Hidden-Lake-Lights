@@ -1863,3 +1863,32 @@ body:has(.halloween-hero) {
       0 0 42px rgba(76, 201, 240, 0.35);
   }
 }
+/* ===== CHRISTMAS GALLERY (MATCH HALLOWEEN STYLE) ===== */
+.gallery-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 23, 61, 0.25), transparent 28%),   /* red */
+    radial-gradient(circle at 70% 80%, rgba(20, 255, 122, 0.25), transparent 30%),  /* green */
+    radial-gradient(circle at 50% 50%, rgba(255, 209, 102, 0.18), transparent 35%); /* gold */
+
+  opacity: 0;
+  transition: 0.35s ease;
+  pointer-events: none;
+}
+
+.gallery-photo:hover::before {
+  opacity: 1;
+}
+
+/* ===== MATCH THE HOVER "PULSE" ===== */
+.gallery-photo:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow:
+    0 0 24px rgba(255, 23, 61, 0.45),
+    0 0 55px rgba(20, 255, 122, 0.35),
+    0 0 80px rgba(255, 209, 102, 0.25);
+}
