@@ -1503,3 +1503,21 @@ body:has(.halloween-hero) {
   filter: drop-shadow(0 0 6px rgba(255,255,255,0.6))
           drop-shadow(0 0 12px rgba(255,0,0,0.4));
 }
+/* ===== HALLOWEEN CONTACT FIX ===== */
+
+.halloween-contact-section .contact-card::before {
+  background: linear-gradient(135deg,
+    rgba(255, 106, 0, 0.7),   /* orange */
+    rgba(120, 0, 0, 0.7),     /* dark red */
+    rgba(255, 0, 0, 0.6)      /* blood red */
+  );
+}
+
+.halloween-contact-section .contact-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  background: rgba(255, 106, 0, 0.15);
+  box-shadow:
+    0 0 20px rgba(255, 106, 0, 0.6),
+    0 0 40px rgba(120, 0, 0, 0.5),
+    0 0 80px rgba(255, 0, 0, 0.4);
+}
