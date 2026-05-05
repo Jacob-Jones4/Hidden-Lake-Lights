@@ -1952,3 +1952,15 @@ body:has(.halloween-hero) {
 .halloween-header .logo span {
   font-size: clamp(0.95rem, 1.6vw, 1.2rem);
 }
+/* ===== HALLOWEEN LOGO COLOR FIX ===== */
+.halloween-header .logo span {
+  background: none;
+  -webkit-text-fill-color: #ff6a00; /* orange */
+  color: #ff6a00;
+
+  text-shadow:
+    0 0 8px rgba(255, 106, 0, 0.8),
+    0 0 18px rgba(255, 0, 0, 0.6);
+
+  animation: none; /* removes the moving gradient */
+}
