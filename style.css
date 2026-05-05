@@ -1756,3 +1756,10 @@ body:has(.halloween-hero) {
   flex-wrap: wrap;
   margin-top: 20px;
 }
+.schedule-card small {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 700;
+}
