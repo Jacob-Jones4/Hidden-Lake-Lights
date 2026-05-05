@@ -1975,3 +1975,8 @@ body:has(.halloween-hero) {
   opacity: 1;
   transform: translateX(100%);
 }
+@media (min-width: 901px) {
+  .back-button {
+    display: none;
+  }
+}
