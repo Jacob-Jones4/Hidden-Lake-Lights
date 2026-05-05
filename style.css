@@ -1236,20 +1236,20 @@ body:has(.halloween-hero) {
 
 .halloween-photo-one {
   grid-row: span 2;
-  background-image: url("images/halloween-show.jpg");
+  background-image: url("images/2025-halloween-1.jpg");
 }
 
 .halloween-photo-two {
-  background-image: url("images/halloween-2.jpg");
+  background-image: url("images/halloween-2.jpeg");
 }
 
 .halloween-photo-three {
-  background-image: url("images/halloween-3.jpg");
+  background-image: url("images/halloween-3.jpeg");
 }
 
 .halloween-photo-four {
   grid-column: span 2;
-  background-image: url("images/halloween-4.jpg");
+  background-image: url("images/halloween-1.jpg");
 }
 
 /* ===== HALLOWEEN CONTACT ===== */
