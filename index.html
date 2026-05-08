@@ -165,11 +165,19 @@
       </div>
     </section>
 
-    <section class="special-dates-section">
-  <h2>Special Show Dates</h2>
-  <p class="special-dates-subtitle">Don’t miss these themed nights!</p>
+    <div class="special-dates-toggle">
+  <button id="specialDatesBtn" class="special-dates-btn">
+    See Special Dates
+  </button>
+</div>
+
+<div id="specialDatesSection" class="special-dates-section hidden-special-dates">
+
+  <h2>SPECIAL SHOW DATES</h2>
+  <p class="special-subtitle">Don't miss these themed nights!</p>
 
   <div class="special-dates-grid">
+
     <div class="special-date-card halloween-card">
       <h3>Halloween Night</h3>
       <p>October 31</p>
@@ -189,11 +197,14 @@
     </div>
 
     <div class="special-date-card newyear-card">
-      <h3>New Year’s Eve</h3>
+      <h3>New Year's Eve</h3>
       <p>December 31</p>
       <span>End-of-year light show</span>
     </div>
+
   </div>
+
+</div>
 </section>
     
     <section class="donation-section" id="donate">
@@ -305,6 +316,21 @@ function toggleSpecialDates() {
     button.textContent = "View Special Dates";
   }
 }
+
+<script>
+const specialBtn = document.getElementById("specialDatesBtn");
+const specialSection = document.getElementById("specialDatesSection");
+
+specialBtn.addEventListener("click", () => {
+  specialSection.classList.toggle("show-special-dates");
+
+  if (specialSection.classList.contains("show-special-dates")) {
+    specialBtn.textContent = "Hide Special Dates";
+  } else {
+    specialBtn.textContent = "See Special Dates";
+  }
+});
+</script>
 </script>
 </body>
 </html>
