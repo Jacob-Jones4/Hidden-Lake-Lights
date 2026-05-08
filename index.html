@@ -1,6 +1,14 @@
+<!-- =====================================================
+  HIDDEN LAKE LIGHTS MAIN PAGE
+  Purpose: Main Christmas/home page for the show website
+===================================================== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ===== PAGE SETUP / BROWSER SETTINGS =====
+       Sets character encoding, mobile responsiveness, SEO info, fonts, favicon,
+       Font Awesome icons, and connects this page to style.css.
+  -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -66,9 +74,11 @@ Pixel Light Show
 
 <meta name="ICBM" content="38.787469, -90.629892">
 
+  <!-- ===== BROWSER TAB TITLE ===== -->
   <title>Hidden Lake Lights | St. Peters Holiday Light Show</title>
   <meta name="description" content="Hidden Lake Lights is a free Halloween and Christmas synchronized light display in St. Peters, Missouri." />
 
+  <!-- ===== FONT + ICON + CSS FILE LINKS ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -78,13 +88,24 @@ Pixel Light Show
 </head>
 
 <body>
+  <!-- ===== BACKGROUND EFFECTS =====
+       These divs create the glowing background and falling snow effect.
+  -->
   <div class="background-glow"></div>
   <div class="snow" aria-hidden="true"></div>
+
+  <!-- ===== TOP ANNOUNCEMENT BAR =====
+       The thin banner at the very top of the page with season/show status.
+  -->
 
   <div class="top-bar">
     <span class="pulse-dot"></span>
     The Show Is Over For The Season! Check Back In A Few Months For The 2026 Schedule!
   </div>
+
+  <!-- ===== NAVIGATION BAR =====
+       Logo, menu button for phones, and page navigation links.
+  -->
 
   <header class="site-header">
     <nav class="nav">
@@ -106,7 +127,14 @@ Pixel Light Show
     </nav>
   </header>
 
+  <!-- ===== MAIN PAGE CONTENT START ===== -->
+
   <main>
+    <!-- ===== HERO / HOME SECTION =====
+         First big section visitors see. Includes background image, animated lights,
+         main title, short description, and call-to-action buttons.
+    -->
+
     <section class="hero" id="home">
       <div class="light-string" aria-hidden="true">
         <span></span><span></span><span></span><span></span><span></span><span></span>
@@ -134,6 +162,11 @@ Pixel Light Show
       <div class="scroll-cue">Scroll</div>
     </section>
 
+    <!-- ===== QUICK STATS SECTION =====
+         Four small cards showing radio station, Christmas lights, Halloween lights,
+         and that the show is free.
+    -->
+
     <section class="stats-wrap">
       <div class="stat-card reveal">
         <span class="stat-icon">📻</span>
@@ -159,6 +192,11 @@ Pixel Light Show
         <p>Public Display</p>
       </div>
     </section>
+
+    <!-- ===== ABOUT THE SHOW SECTION =====
+         Text explaining what Hidden Lake Lights is, plus location/audio/viewing info
+         and the stacked diagonal photo layout.
+    -->
 
     <section class="split-section" id="about">
       <div class="split-text reveal">
@@ -206,6 +244,10 @@ Pixel Light Show
       </div>
     </section>
 
+    <!-- ===== SHOW SCHEDULE SECTION =====
+         Main weekly Christmas show schedule and expandable special dates area.
+    -->
+
     <section class="section dark-panel" id="schedule">
       <div class="section-heading reveal">
         <p class="eyebrow">2026 Christmas Show</p>
@@ -232,11 +274,21 @@ Pixel Light Show
       </div>
     
 
+    <!-- ===== SPECIAL DATES BUTTON =====
+         Button that opens/closes the special holiday date cards below.
+    -->
+
     <div class="special-dates-toggle">
   <button id="specialDatesBtn" class="special-dates-btn">
     See Special Dates
   </button>
 </div>
+
+<!-- ===== SPECIAL SHOW DATES CARDS =====
+     Hidden by default. Opens when the See Special Dates button is clicked.
+     Includes countdowns for Opening Night, Christmas Eve, Christmas Day,
+     and New Year's Eve.
+-->
 
 <div id="specialDatesSection" class="special-dates-section hidden-special-dates">
 
@@ -315,6 +367,10 @@ Pixel Light Show
 
 </section>
     
+    <!-- ===== DONATION SECTION =====
+         Main donation callout card with links to donate and view donation history.
+    -->
+
     <section class="donation-section" id="donate">
       <div class="donation-card reveal">
         <p class="eyebrow">Donations</p>
@@ -335,7 +391,10 @@ Pixel Light Show
       </div>
     </section>
 
-    <!-- ===== DONATION TOTAL INFO CARDS ===== -->
+    <!-- ===== DONATION TOTAL INFO CARDS =====
+         Four donation stat cards showing current season total, goal, last year's total,
+         and total raised since 2018.
+    -->
 <section class="donation-stats-wrap">
   <div class="donation-stat-card reveal">
     <span class="stat-icon">💵</span>
@@ -362,6 +421,10 @@ Pixel Light Show
   </div>
 </section>
 
+    <!-- ===== GALLERY SECTION =====
+         Photo grid showing favorite pictures from past seasons.
+    -->
+
     <section class="section" id="gallery">
       <div class="section-heading reveal">
         <p class="eyebrow">Gallery</p>
@@ -376,6 +439,10 @@ Pixel Light Show
         <div class="gallery-photo photo-four reveal"><span>2020</span></div>
       </div>
     </section>
+
+    <!-- ===== SOCIALS / CONTACT SECTION =====
+         Email, Facebook, and YouTube contact cards.
+    -->
 
     <section class="section contact-section" id="contact">
       <div class="section-heading reveal">
@@ -405,11 +472,23 @@ Pixel Light Show
     </section>
   </main>
 
+  <!-- ===== FOOTER =====
+       Bottom copyright line and design credit.
+  -->
+
   <footer>
     <p>© <span id="year"></span> Hidden Lake Lights. St. Peters, Missouri.   Design: Jacob Jones</p>
   </footer>
 
+  <!-- ===== MAIN JAVASCRIPT FILE =====
+       Connects the page to script.js for menu/reveal/year functionality.
+  -->
+
   <script src="script.js"></script>
+
+  <!-- ===== SPECIAL DATES + COUNTDOWN SCRIPT =====
+       Handles the See Special Dates button and updates the countdown timers.
+  -->
 
   <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -426,6 +505,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ===== COUNTDOWN FUNCTION =====
+  // Finds a countdown element by ID and updates it every minute.
   function updateCountdown(id, targetDate) {
     const element = document.getElementById(id);
     if (!element) return;
@@ -450,6 +531,8 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(tick, 60000);
   }
 
+  // ===== COUNTDOWN TARGET DATES =====
+  // Uses the current year and counts down to each special show date.
   const currentYear = new Date().getFullYear();
 updateCountdown("openingNightCountdown", new Date(`November 28, ${currentYear} 17:00:00`).getTime());
   updateCountdown("christmasCountdown", new Date(`December 24, ${currentYear} 17:00:00`).getTime());
@@ -458,5 +541,6 @@ updateCountdown("openingNightCountdown", new Date(`November 28, ${currentYear} 1
   });
 </script>
 
+  <!-- ===== PAGE END ===== -->
 </body>
 </html>
