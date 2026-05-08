@@ -333,60 +333,50 @@
   <script src="script.js"></script>
 
   <script>
-const specialBtn = document.getElementById("specialDatesBtn");
-const specialSection = document.getElementById("specialDatesSection");
+document.addEventListener("DOMContentLoaded", () => {
+  const specialBtn = document.getElementById("specialDatesBtn");
+  const specialSection = document.getElementById("specialDatesSection");
 
-specialBtn.addEventListener("click", () => {
-  specialSection.classList.toggle("show-special-dates");
+  if (specialBtn && specialSection) {
+    specialBtn.addEventListener("click", () => {
+      specialSection.classList.toggle("show-special-dates");
 
-  if (specialSection.classList.contains("show-special-dates")) {
-    specialBtn.textContent = "Hide Special Dates";
-  } else {
-    specialBtn.textContent = "See Special Dates";
+      specialBtn.textContent = specialSection.classList.contains("show-special-dates")
+        ? "Hide Special Dates"
+        : "See Special Dates";
+    });
   }
-});
 
-<script>
-function updateCountdown(id, targetDate) {
-  const element = document.getElementById(id);
+  function updateCountdown(id, targetDate) {
+    const element = document.getElementById(id);
+    if (!element) return;
 
-  function tick() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
+    function tick() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
 
-    if (distance < 0) {
-      element.innerHTML = "LIVE NOW";
-      return;
+      if (distance < 0) {
+        element.innerHTML = "LIVE NOW";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+
+      element.innerHTML = `${days}d ${hours}h ${minutes}m`;
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((distance / (1000 * 60)) % 60);
-
-    element.innerHTML =
-      `${days}d ${hours}h ${minutes}m`;
+    tick();
+    setInterval(tick, 60000);
   }
 
-  tick();
-  setInterval(tick, 60000);
-}
+  const currentYear = new Date().getFullYear();
 
-const currentYear = new Date().getFullYear();
-
-updateCountdown(
-  "christmasCountdown",
-  new Date(`December 24, ${currentYear} 17:00:00`).getTime()
-);
-
-updateCountdown(
-  "christmasDayCountdown",
-  new Date(`December 25, ${currentYear} 17:00:00`).getTime()
-);
-
-updateCountdown(
-  "newYearCountdown",
-  new Date(`December 31, ${currentYear} 17:00:00`).getTime()
-);
+  updateCountdown("christmasCountdown", new Date(`December 24, ${currentYear} 17:00:00`).getTime());
+  updateCountdown("christmasDayCountdown", new Date(`December 25, ${currentYear} 17:00:00`).getTime());
+  updateCountdown("newYearCountdown", new Date(`December 31, ${currentYear} 17:00:00`).getTime());
+});
 </script>
 
 </body>
