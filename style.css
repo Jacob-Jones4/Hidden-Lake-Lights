@@ -2081,3 +2081,63 @@ body:has(.halloween-hero) {
   opacity: 1;
   margin-top: 25px;
 }
+.holiday-icon {
+  font-size: 3rem;
+  margin-bottom: 14px;
+
+  animation: holidayFloat 3s ease-in-out infinite;
+
+  filter:
+    drop-shadow(0 0 10px rgba(255,255,255,0.5))
+    drop-shadow(0 0 20px rgba(255,255,255,0.35));
+}
+
+.halloween-card .holiday-icon {
+  filter:
+    drop-shadow(0 0 10px #ff6a00)
+    drop-shadow(0 0 24px #ff0000);
+}
+
+.christmas-card .holiday-icon {
+  filter:
+    drop-shadow(0 0 10px #14ff7a)
+    drop-shadow(0 0 24px #ff173d);
+}
+
+.newyear-card .holiday-icon {
+  filter:
+    drop-shadow(0 0 10px #4cc9f0)
+    drop-shadow(0 0 24px #7c3aed);
+}
+
+@keyframes holidayFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.countdown-wrap {
+  margin: 14px 0;
+}
+
+.countdown-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.75;
+  margin-bottom: 4px;
+}
+
+.countdown-timer {
+  font-size: 1rem;
+  font-weight: 900;
+  color: #fff;
+
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.5),
+    0 0 18px rgba(255,255,255,0.3);
+}
