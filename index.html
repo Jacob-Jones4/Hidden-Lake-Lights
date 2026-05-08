@@ -291,5 +291,20 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <script>
+function toggleSpecialDates() {
+  const section = document.getElementById("specialDates");
+  const button = document.querySelector(".special-toggle-btn");
+
+  section.classList.toggle("show-special-dates");
+
+  if (section.classList.contains("show-special-dates")) {
+    button.textContent = "Hide Special Dates";
+  } else {
+    button.textContent = "View Special Dates";
+  }
+}
+</script>
 </body>
 </html>
