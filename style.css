@@ -1980,3 +1980,71 @@ body:has(.halloween-hero) {
     display: none;
   }
 }
+.special-toggle-wrap {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.special-toggle-btn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #b3001b, #0f8a4b);
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.special-toggle-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.special-dates-hidden {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.6s ease,
+    opacity 0.4s ease,
+    margin-top 0.4s ease;
+}
+
+.show-special-dates {
+  max-height: 1200px;
+  opacity: 1;
+  margin-top: 35px;
+}
+
+.special-dates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.special-date-card {
+  padding: 28px 22px;
+  border-radius: 22px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease;
+}
+
+.special-date-card:hover {
+  transform: translateY(-5px);
+}
+
+.halloween-card {
+  background: linear-gradient(135deg, #ff7a18, #5b1b8a);
+}
+
+.christmas-card {
+  background: linear-gradient(135deg, #0f8a4b, #b3001b);
+}
+
+.newyear-card {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+}
