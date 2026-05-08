@@ -2070,3 +2070,14 @@ body:has(.halloween-hero) {
 .newyear-card {
   background: linear-gradient(135deg, #2563eb, #7c3aed);
 }
+.special-dates-toggle {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.show-special-dates {
+  max-height: 1200px;
+  opacity: 1;
+  margin-top: 25px;
+}
