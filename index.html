@@ -186,9 +186,20 @@
 
     <div class="special-date-card christmas-card">
   <div class="holiday-icon">🌟</div>
+
   <h3>Opening Night</h3>
-  <p>November 28th</p>
-  <span>7PM - 10PM</span>
+  <p>November 28</p>
+  <p>7PM - 10PM</p>
+
+  <div class="countdown-wrap">
+    <div class="countdown-label">Countdown</div>
+
+    <div id="openingNightCountdown" class="countdown-timer">
+      Loading...
+    </div>
+  </div>
+
+  <span>Opening night premiere show!</span>
 </div>
 
 <div class="special-date-card christmas-card">
@@ -234,7 +245,7 @@
     </div>
   </div>
 
-  <span>End-of-year light show</span>
+  <span>End-of-year light show!</span>
 </div>
 
   </div>
@@ -379,11 +390,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const currentYear = new Date().getFullYear();
-
+updateCountdown("openingNightCountdown", new Date(`November 28, ${currentYear} 17:00:00`).getTime());
   updateCountdown("christmasCountdown", new Date(`December 24, ${currentYear} 17:00:00`).getTime());
   updateCountdown("christmasDayCountdown", new Date(`December 25, ${currentYear} 17:00:00`).getTime());
   updateCountdown("newYearCountdown", new Date(`December 31, ${currentYear} 17:00:00`).getTime());
-});
+  });
 </script>
 
 </body>
