@@ -630,8 +630,12 @@ h2 {
 .about-photo-stack .about-photo {
   width: 100%;
   min-height: 420px;
+
+  background-position: center top;
+
   transform: rotate(4deg);
-  transition: transform 0.3s ease, filter 0.3s ease;
+
+  transition: 0.3s ease;
 }
 
 .about-photo-second {
