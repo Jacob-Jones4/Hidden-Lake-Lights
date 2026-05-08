@@ -1980,164 +1980,281 @@ body:has(.halloween-hero) {
     display: none;
   }
 }
+
+/* =====================================================
+  SPECIAL SHOW DATES - PREMIUM EXPANDABLE CARDS
+===================================================== */
+
 .special-dates-toggle {
   display: flex;
   justify-content: center;
-  margin-top: 35px;
+  margin-top: 28px;
 }
 
 .special-dates-btn {
-  padding: 14px 30px;
+  position: relative;
+  padding: 14px 34px;
   border: none;
   border-radius: 999px;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 900;
   color: white;
   cursor: pointer;
-
   background: linear-gradient(135deg, #b3001b, #0f8a4b);
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-
-  transition: all 0.25s ease;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.35),
+    0 0 22px rgba(20,255,122,0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
 
 .special-dates-btn:hover {
   transform: translateY(-3px) scale(1.03);
+  filter: brightness(1.12);
+  box-shadow:
+    0 14px 36px rgba(0,0,0,0.42),
+    0 0 28px rgba(20,255,122,0.35),
+    0 0 24px rgba(255,23,61,0.25);
 }
 
 .hidden-special-dates {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-
   transition:
-    max-height 0.7s ease,
-    opacity 0.4s ease,
-    margin-top 0.4s ease;
+    max-height 0.8s ease,
+    opacity 0.45s ease,
+    margin-top 0.45s ease;
 }
 
 .show-special-dates {
-  max-height: 1200px;
+  max-height: 1800px;
   opacity: 1;
-  margin-top: 55px;
+  margin-top: 32px;
 }
 
 .special-dates-section {
   text-align: center;
+  width: min(1500px, calc(100% - 32px));
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .special-dates-section h2 {
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(3.2rem, 7vw, 5.8rem);
   font-weight: 900;
   line-height: 0.9;
   margin-bottom: 12px;
+  text-shadow:
+    0 0 12px rgba(255,255,255,0.35),
+    0 0 30px rgba(20,255,122,0.25);
 }
 
 .special-subtitle {
-  margin-bottom: 35px;
-  opacity: 0.85;
+  margin-bottom: 32px;
+  opacity: 0.9;
+  color: var(--muted);
+  font-weight: 700;
 }
 
 .special-dates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
 }
 
 .special-date-card {
-  padding: 30px 20px;
-  border-radius: 20px;
+  position: relative;
+  min-height: 330px;
+  padding: 38px 24px 26px;
+  border-radius: 28px;
   color: white;
+  overflow: hidden;
+  isolation: isolate;
 
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  transition: transform 0.25s ease;
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow:
+    0 22px 55px rgba(0,0,0,0.45),
+    inset 0 0 35px rgba(255,255,255,0.06);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.special-date-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: 0.95;
+}
+
+.special-date-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(255,255,255,0.22), transparent 24%),
+    radial-gradient(circle at 80% 15%, rgba(255,255,255,0.12), transparent 20%),
+    linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.48));
+  pointer-events: none;
 }
 
 .special-date-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.025);
+  filter: brightness(1.08);
 }
 
-.halloween-card {
-  background: linear-gradient(135deg, #ff6a00, #7b1fa2);
+.halloween-card::before {
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,106,0,0.85), transparent 28%),
+    radial-gradient(circle at 85% 25%, rgba(123,31,162,0.75), transparent 34%),
+    linear-gradient(135deg, #ff6a00, #35105f 80%);
 }
 
-.christmas-card {
-  background: linear-gradient(135deg, #148a49, #b3001b);
+.christmas-card::before {
+  background:
+    radial-gradient(circle at 25% 20%, rgba(20,255,122,0.5), transparent 28%),
+    radial-gradient(circle at 85% 30%, rgba(255,23,61,0.58), transparent 34%),
+    linear-gradient(135deg, #063d23, #b3001b);
 }
 
-.newyear-card {
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
-}
-.special-dates-toggle {
-  display: flex;
-  justify-content: center;
-  margin-top: 18px;
+.newyear-card::before {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(76,201,240,0.75), transparent 30%),
+    radial-gradient(circle at 85% 30%, rgba(124,58,237,0.8), transparent 34%),
+    linear-gradient(135deg, #0b57d0, #3b087a);
 }
 
-.show-special-dates {
-  max-height: 1200px;
-  opacity: 1;
-  margin-top: 25px;
-}
 .holiday-icon {
-  font-size: 3rem;
-  margin-bottom: 14px;
-
+  font-size: 4.8rem;
+  margin-bottom: 18px;
+  line-height: 1;
   animation: holidayFloat 3s ease-in-out infinite;
-
-  filter:
-    drop-shadow(0 0 10px rgba(255,255,255,0.5))
-    drop-shadow(0 0 20px rgba(255,255,255,0.35));
 }
 
 .halloween-card .holiday-icon {
+  text-shadow:
+    0 0 14px #ff6a00,
+    0 0 34px #ff0000;
   filter:
-    drop-shadow(0 0 10px #ff6a00)
-    drop-shadow(0 0 24px #ff0000);
+    drop-shadow(0 0 12px #ff6a00)
+    drop-shadow(0 0 28px #ff0000);
 }
 
 .christmas-card .holiday-icon {
+  text-shadow:
+    0 0 14px #14ff7a,
+    0 0 34px #ff173d;
   filter:
-    drop-shadow(0 0 10px #14ff7a)
-    drop-shadow(0 0 24px #ff173d);
+    drop-shadow(0 0 12px #14ff7a)
+    drop-shadow(0 0 28px #ff173d);
 }
 
 .newyear-card .holiday-icon {
+  text-shadow:
+    0 0 14px #4cc9f0,
+    0 0 34px #7c3aed;
   filter:
-    drop-shadow(0 0 10px #4cc9f0)
-    drop-shadow(0 0 24px #7c3aed);
+    drop-shadow(0 0 12px #4cc9f0)
+    drop-shadow(0 0 28px #7c3aed);
+}
+
+.special-date-card h3 {
+  font-size: 1.55rem;
+  font-weight: 950;
+  line-height: 1.15;
+  text-shadow: 0 0 14px rgba(0,0,0,0.75);
+}
+
+.special-date-card p {
+  color: var(--gold);
+  font-weight: 950;
+  font-size: 1.15rem;
+  margin-top: 6px;
+}
+
+.special-date-card span {
+  margin-top: 4px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.92);
+}
+
+.countdown-wrap {
+  width: 100%;
+  margin: 18px 0 12px;
+  padding: 14px 12px;
+  border-radius: 16px;
+  background: rgba(0,0,0,0.42);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow:
+    inset 0 0 18px rgba(255,255,255,0.05),
+    0 0 24px rgba(0,0,0,0.28);
+}
+
+.countdown-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 950;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+
+.christmas-card:nth-of-type(3) .countdown-label {
+  color: var(--red);
+}
+
+.newyear-card .countdown-label {
+  color: var(--blue);
+}
+
+.countdown-timer {
+  font-family: "Bebas Neue", Arial, sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  letter-spacing: 2px;
+  line-height: 1;
+  color: white;
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.55),
+    0 0 22px rgba(255,255,255,0.25);
 }
 
 @keyframes holidayFloat {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0) scale(1);
   }
 
   50% {
-    transform: translateY(-6px);
+    transform: translateY(-8px) scale(1.05);
   }
 }
 
-.countdown-wrap {
-  margin: 14px 0;
+@media (max-width: 1100px) {
+  .special-dates-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.countdown-label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  opacity: 0.75;
-  margin-bottom: 4px;
+@media (max-width: 650px) {
+  .special-dates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .special-date-card {
+    min-height: 300px;
+  }
+
+  .holiday-icon {
+    font-size: 4rem;
+  }
+
+  .countdown-timer {
+    font-size: 2rem;
+  }
 }
 
-.countdown-timer {
-  font-size: 1rem;
-  font-weight: 900;
-  color: #fff;
-
-  text-shadow:
-    0 0 8px rgba(255,255,255,0.5),
-    0 0 18px rgba(255,255,255,0.3);
-}
