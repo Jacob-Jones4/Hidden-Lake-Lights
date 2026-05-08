@@ -177,6 +177,21 @@
 
   <!-- ===== JS ===== -->
   <script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const halloweenBtn = document.getElementById("halloweenSpecialDatesBtn");
+  const halloweenSection = document.getElementById("halloweenSpecialDatesSection");
 
+  if (halloweenBtn && halloweenSection) {
+    halloweenBtn.addEventListener("click", () => {
+      halloweenSection.classList.toggle("show-halloween-special-dates");
+
+      halloweenBtn.textContent = halloweenSection.classList.contains("show-halloween-special-dates")
+        ? "Hide Special Dates"
+        : "See Special Dates";
+    });
+  }
+});
+</script>
 </body>
 </html>
