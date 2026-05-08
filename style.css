@@ -1980,34 +1980,39 @@ body:has(.halloween-hero) {
     display: none;
   }
 }
-.special-toggle-wrap {
-  text-align: center;
-  margin-top: 25px;
+.special-dates-toggle {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
 }
 
-.special-toggle-btn {
-  padding: 14px 28px;
+.special-dates-btn {
+  padding: 14px 30px;
   border: none;
   border-radius: 999px;
   font-size: 1rem;
   font-weight: 700;
-  cursor: pointer;
   color: white;
+  cursor: pointer;
+
   background: linear-gradient(135deg, #b3001b, #0f8a4b);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+
   transition: all 0.25s ease;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
-.special-toggle-btn:hover {
+.special-dates-btn:hover {
   transform: translateY(-3px) scale(1.03);
 }
 
-.special-dates-hidden {
+.hidden-special-dates {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
+
   transition:
-    max-height 0.6s ease,
+    max-height 0.7s ease,
     opacity 0.4s ease,
     margin-top 0.4s ease;
 }
@@ -2015,21 +2020,38 @@ body:has(.halloween-hero) {
 .show-special-dates {
   max-height: 1200px;
   opacity: 1;
-  margin-top: 35px;
+  margin-top: 55px;
+}
+
+.special-dates-section {
+  text-align: center;
+}
+
+.special-dates-section h2 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 0.9;
+  margin-bottom: 12px;
+}
+
+.special-subtitle {
+  margin-bottom: 35px;
+  opacity: 0.85;
 }
 
 .special-dates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
 }
 
 .special-date-card {
-  padding: 28px 22px;
-  border-radius: 22px;
+  padding: 30px 20px;
+  border-radius: 20px;
   color: white;
-  text-align: center;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+
   transition: transform 0.25s ease;
 }
 
@@ -2038,11 +2060,11 @@ body:has(.halloween-hero) {
 }
 
 .halloween-card {
-  background: linear-gradient(135deg, #ff7a18, #5b1b8a);
+  background: linear-gradient(135deg, #ff6a00, #7b1fa2);
 }
 
 .christmas-card {
-  background: linear-gradient(135deg, #0f8a4b, #b3001b);
+  background: linear-gradient(135deg, #148a49, #b3001b);
 }
 
 .newyear-card {
