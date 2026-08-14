@@ -3108,10 +3108,8 @@ h2.live-status-title {
 }
 
 .current-year-timeline .timeline-year {
-  color: #ffd166;
-  text-shadow:
-    0 0 10px rgba(255, 209, 102, 0.9),
-    0 0 25px rgba(255, 106, 0, 0.55);
+  color: #000000;
+  text-shadow: none;
 }
 
 .current-year-timeline .timeline-tag {
