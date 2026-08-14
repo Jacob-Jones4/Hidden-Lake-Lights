@@ -193,6 +193,22 @@ Pixel Light Show
       </div>
     </section>
 
+    <!-- ===== LIVE SHOW STATUS ===== -->
+    <section class="live-status-section" aria-labelledby="christmasLiveStatusTitle">
+      <div class="live-status-card christmas-live-status reveal" id="liveShowStatus" data-season="christmas">
+        <div class="live-status-indicator" aria-hidden="true"><span class="live-status-dot"></span></div>
+        <div class="live-status-copy">
+          <p class="live-status-label">2026 Christmas Show Status</p>
+          <h2 id="christmasLiveStatusTitle" class="live-status-title">Checking show status...</h2>
+          <p class="live-status-message" id="liveShowStatusMessage">Loading the current Hidden Lake Lights schedule.</p>
+        </div>
+        <div class="live-status-radio">
+          <span>📻</span>
+          <div><small>When the show is live</small><strong>90.1 FM</strong></div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== ABOUT THE SHOW SECTION =====
          Text explaining what Hidden Lake Lights is, plus location/audio/viewing info
          and the stacked diagonal photo layout.
@@ -252,7 +268,7 @@ Pixel Light Show
       <div class="section-heading reveal">
         <p class="eyebrow">2026 Christmas Show</p>
         <h2>Show Schedule</h2>
-        <p>The Schedule for the 2026 Christmas Season will be announced Late Summer, Early Fall! Stay Tuned!</p>
+        <p>The 2026 Christmas season opens November 28 at 7 PM. Regular nightly hours are listed below.</p>
       </div>
 
       <div class="schedule-grid">
@@ -377,8 +393,25 @@ Pixel Light Show
         <h2>Support Sts. Joachim and Ann Care Service</h2>
         <p>
           Hidden Lake Lights is free to visit! Donations help support Sts. Joachim and Ann Care Service. Learn more about their mission by visiting <a href="https://jacares.org" target="_blank" rel="noopener noreferrer">jacares.org</a>
-</a>
         </p>
+        <!-- ===== 2026 DONATION GOAL ===== -->
+        <div class="donation-progress" id="donationProgress" aria-label="2026 Christmas donation progress">
+          <div class="donation-progress-heading">
+            <div>
+              <span class="donation-progress-kicker">2026 Season Progress</span>
+              <strong><span id="donationRaisedAmount">$0</span> raised</strong>
+            </div>
+            <div class="donation-progress-goal">Goal: <strong id="donationGoalAmount">$1,200</strong></div>
+          </div>
+          <div class="donation-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="1200" aria-valuenow="0" id="donationProgressBar">
+            <div class="donation-progress-fill" id="donationProgressFill"></div>
+          </div>
+          <div class="donation-progress-footer">
+            <span id="donationProgressPercent">0% of goal</span>
+            <span>Thank you for supporting our community!</span>
+          </div>
+        </div>
+
         <div class="donation-buttons">
           <a class="button primary" href="https://donate.stripe.com/7sIeYQ3hO5oAbpS8ww" target="_blank" rel="noopener">
     Donate Here
@@ -398,13 +431,13 @@ Pixel Light Show
 <section class="donation-stats-wrap">
   <div class="donation-stat-card reveal">
     <span class="stat-icon">💵</span>
-    <h3>$0</h3>
+    <h3 id="donationSeasonStat">$0</h3>
     <p>Raised This Season</p>
   </div>
 
   <div class="donation-stat-card reveal">
     <span class="stat-icon">🎯</span>
-    <h3>$1,200</h3>
+    <h3 id="donationGoalStat">$1,200</h3>
     <p>Season Goal</p>
   </div>
 
