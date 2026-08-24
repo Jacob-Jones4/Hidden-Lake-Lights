@@ -3144,3 +3144,16 @@ h2.live-status-title {
       0 24px 90px rgba(0, 0, 0, 0.45);
   }
 }
+/* ===== NAV BUTTON AUTO WIDTH ===== */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-links a {
+  flex: 0 0 auto;
+  width: auto;
+  white-space: nowrap;
+  padding: 10px 14px;
+}
