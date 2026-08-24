@@ -1233,3 +1233,12 @@
     animation: none !important;
   }
 }
+/* ===== FIX HERO BUTTON / STATS OVERLAP ===== */
+
+.how-hero {
+  padding-bottom: 180px;
+}
+
+.how-hero-content {
+  padding-bottom: 30px;
+}
