@@ -1236,9 +1236,18 @@
 /* ===== FIX HERO BUTTON / STATS OVERLAP ===== */
 
 .how-hero {
-  padding-bottom: 180px;
+  padding-bottom: 230px;
 }
 
 .how-hero-content {
   padding-bottom: 30px;
+}
+.how-hero .hero-buttons {
+  position: relative;
+  z-index: 20;
+}
+
+.how-stats {
+  position: relative;
+  z-index: 10;
 }
