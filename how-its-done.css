@@ -1251,3 +1251,23 @@
   position: relative;
   z-index: 10;
 }
+/* ===== FINAL HERO / STATS SPACING FIX ===== */
+
+.how-hero {
+  padding-bottom: 230px;
+}
+
+.how-hero-content {
+  padding-bottom: 40px;
+}
+
+.how-hero .hero-buttons {
+  position: relative;
+  z-index: 30;
+}
+
+.how-stats {
+  position: relative;
+  z-index: 10;
+  margin-top: -70px;
+}
