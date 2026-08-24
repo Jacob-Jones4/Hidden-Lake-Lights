@@ -1233,41 +1233,25 @@
     animation: none !important;
   }
 }
-/* ===== FIX HERO BUTTON / STATS OVERLAP ===== */
+/* =====================================================
+   HOW IT'S DONE - HERO / STATS SPACING FIX
+===================================================== */
 
 .how-hero {
-  padding-bottom: 300px;
+  padding-bottom: 70px;
 }
 
-.how-hero-content {
-  padding-bottom: 30px;
-}
 .how-hero .hero-buttons {
   position: relative;
-  z-index: 20;
+  z-index: 5;
+  margin-bottom: 0;
 }
 
 .how-stats {
   position: relative;
   z-index: 10;
-}
-/* ===== FINAL HERO / STATS SPACING FIX ===== */
 
-.how-hero {
-  padding-bottom: 230px;
-}
-
-.how-hero-content {
-  padding-bottom: 40px;
-}
-
-.how-hero .hero-buttons {
-  position: relative;
-  z-index: 30;
-}
-
-.how-stats {
-  position: relative;
-  z-index: 10;
-  margin-top: -70px;
+  /* Do not pull the cards up over the buttons */
+  margin-top: 35px !important;
+  transform: none !important;
 }
