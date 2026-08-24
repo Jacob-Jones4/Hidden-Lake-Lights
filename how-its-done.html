@@ -72,22 +72,14 @@
         <p class="eyebrow">Behind The Lights</p>
         <h1>How It’s Done</h1>
         <p class="how-hero-text">
-          Thousands of individually controlled lights, two main pixel controllers, a dedicated show computer,
-          nine DC power supplies, a private network, and a whole lot of programming all work together to make
-          Hidden Lake Lights come alive.
+          Ever wondered how to make your own light show? This page is all about how it's done! I'll walk through how thousands of individually controlled lights, two main pixel controllers, a dedicated show computer, and a whole lot of programming all work together to make Hidden Lake Lights come alive.
         </p>
 
         <div class="hero-buttons">
-          <a class="button primary" href="#signal">Follow The Signal</a>
+          <a class="button primary" href="#signal">View the Process</a>
           <a class="button glass" href="#equipment">Explore The Equipment</a>
         </div>
       </div>
-
-      <div class="how-scroll-cue" aria-hidden="true">
-        <span>SCROLL TO GO BEHIND THE SCENES</span>
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-    </section>
 
     <!-- QUICK STATS -->
     <section class="how-stats">
@@ -112,7 +104,7 @@
       <article class="how-stat reveal">
         <span class="how-stat-icon"><i class="fa-solid fa-radio"></i></span>
         <strong>90.1 FM</strong>
-        <p>Show Audio</p>
+        <p>Show Radio Station</p>
       </article>
     </section>
 
@@ -131,11 +123,9 @@
       <div class="how-intro-callout reveal">
         <div class="callout-icon"><i class="fa-solid fa-circle-info"></i></div>
         <div>
-          <strong>The important idea:</strong>
+          <strong>IMPORTANT:</strong>
           <p>
-            The show computer does not directly power the lights. It sends instructions. The Falcon controllers turn
-            those instructions into pixel data, while a separate 12-volt DC power system supplies the electricity the
-            pixels need to actually illuminate.
+            These pixel lights are not meant for normal consumer use. They require computer programming and special electrical equipment to operate. Failure to do so may cause serious issues, and could be dangerous.
           </p>
         </div>
       </div>
@@ -144,7 +134,7 @@
     <!-- SIGNAL FLOW -->
     <section class="how-signal-section" id="signal">
       <div class="section-heading reveal">
-        <p class="eyebrow">Follow The Signal</p>
+        <p class="eyebrow">View The Process</p>
         <h2>From Music To Light</h2>
         <p>Here is the path a lighting command takes before a pixel in the yard changes color.</p>
       </div>
@@ -160,7 +150,7 @@
           <div class="signal-copy">
             <p class="signal-kicker">Design</p>
             <h3>xLights</h3>
-            <p>Every color, fade, chase, flash and effect is programmed against the music on a timeline.</p>
+            <p>xLights is your sequencer. This is where you make the magic happen. A standard 3 minute song takes about 3 weeks of programming time, but there are easier ways to start off. Many companies offer sequences for purchase! But I think that's no fun!</p>
           </div>
         </article>
 
@@ -170,7 +160,7 @@
           <div class="signal-copy">
             <p class="signal-kicker">Playback</p>
             <h3>xSchedule</h3>
-            <p>The scheduler plays the sequence and audio at the correct time each night.</p>
+            <p>xSchedule is a program that is paired with xLights to easily schedule all your sequences to play whenever you'd like automatically.</p>
           </div>
         </article>
 
@@ -199,8 +189,8 @@
           <div class="signal-icon"><i class="fa-solid fa-microchip"></i></div>
           <div class="signal-copy">
             <p class="signal-kicker">Control</p>
-            <h3>Falcon F16V3 + F16V4</h3>
-            <p>The controllers receive show data and generate the precise signals needed by each connected pixel string.</p>
+            <h3>Dedicated Pixel Controllers</h3>
+            <p>The controllers receive show data and generate the precise signals needed by each connected pixel string. I specifically only use falcon controllers from <a href="https://pixelcontroller.com/store/">Pixel Controllers</a>. Our show uses an F16V4 and F16V3 with multiple expansion boards and remote recievers.</p>
           </div>
         </article>
 
@@ -208,9 +198,9 @@
           <div class="signal-number">06</div>
           <div class="signal-icon"><i class="fa-solid fa-sitemap"></i></div>
           <div class="signal-copy">
-            <p class="signal-kicker">Extension</p>
+            <p class="signal-kicker">Long-Distance</p>
             <h3>Smart Receivers</h3>
-            <p>Four Falcon Smart Receivers extend outputs to farther-away areas such as roof props and singing faces.</p>
+            <p>You can use smart recievers to get pixel data to props that are further away from your controllers. Our show uses these for some roof props, and the singing trees.</p>
           </div>
         </article>
 
@@ -219,8 +209,8 @@
           <div class="signal-icon"><i class="fa-solid fa-lightbulb"></i></div>
           <div class="signal-copy">
             <p class="signal-kicker">The Result</p>
-            <h3>WS2811 Pixels</h3>
-            <p>Each pixel receives its instructions and produces the requested red, green and blue light.</p>
+            <h3>LIGHT!</h3>
+            <p>After sequencing your first song, purchasiung your equipment and hooking it all up, you should finally have a show! Now all you need is an FM Radio Transmitter to get music to cars on the street!</p>
           </div>
         </article>
       </div>
@@ -231,7 +221,7 @@
           <p class="signal-kicker">Running Alongside The Data</p>
           <h3>The 12V Power System</h3>
           <p>
-            Nine 12V power supplies and roughly 14 distribution boards deliver DC power around the display. Power can
+             In our display, we have nine 12V power supplies and roughly 14 distribution boards to deliver DC power around the display. Power can
             be injected at different points so long pixel runs stay bright and different areas can be isolated into
             easier-to-troubleshoot zones.
           </p>
@@ -269,7 +259,7 @@
           <h3>xSchedule</h3>
           <p>
             Hidden Lake Lights uses xSchedule, which is included with xLights, to run the show each night. It handles
-            scheduled playback of the sequence and music. Another popular option in the lighting community is Falcon
+            scheduled playback of the sequence and music. Another popular option in the lighting community is Falcon Pi
             Player, commonly called FPP.
           </p>
         </article>
@@ -279,9 +269,9 @@
             <span><i class="fa-solid fa-microchip"></i></span>
             <small>MAIN CONTROL</small>
           </div>
-          <h3>Falcon F16V3 + F16V4</h3>
+          <h3>Pixel Controllers</h3>
           <p>
-            These are the two main pixel controllers. They control the visible behavior of every connected light —
+            We currently use two main pixel controllers. A Falcon F16V4 and F16 V3. These control the visible behavior of every connected light —
             color, intensity, timing, flashing and effects — based on the data sent by the show computer.
           </p>
         </article>
@@ -316,7 +306,7 @@
             <span><i class="fa-solid fa-tower-broadcast"></i></span>
             <small>AUDIO</small>
           </div>
-          <h3>1W FM Transmitter</h3>
+          <h3>1Watt FM Transmitter</h3>
           <p>
             The same music used for sequencing is broadcast so guests can listen from inside their vehicles. Hidden
             Lake Lights uses a 1-watt FM transmitter and broadcasts on 90.1 FM.
@@ -345,11 +335,11 @@
           <h2>What Is A Pixel?</h2>
           <p>
             Unlike a traditional strand where many bulbs behave as one circuit, an addressable RGB pixel has a small
-            control chip that lets the system command individual lights. That is what makes effects appear to move,
+            computer chip inside that lets the system command individual lights. Each pixel has three tiny LEDs inside of it, Red, Green, and Blue. That is what makes effects appear to move,
             sweep, chase and sparkle across the house.
           </p>
           <p>
-            Our pixels are custom ordered from vendors in China so we can specify the exact build we want — chip type,
+            Our pixels are custom ordered from vendors in China so we can specify the exact build we want — chip type, voltage,
             wire color, wire gauge, spacing between lights, connector style and more.
           </p>
 
@@ -477,7 +467,7 @@
             90.1 FM, so the music reaches them without outdoor speakers filling the neighborhood with sound.
           </p>
           <p>
-            Hidden Lake Lights currently uses a 1-watt transmitter purchased online. Anyone building an FM-based
+            We currently use a 1-watt transmitter that I purchased from amazon. Anyone building an FM-based
             display should verify the rules that apply where they live, use an appropriate transmitter, and select a
             frequency that does not cause harmful interference to licensed broadcasts.
           </p>
