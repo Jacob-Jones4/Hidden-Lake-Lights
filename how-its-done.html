@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>How It’s Done | Hidden Lake Lights</title>
+  <meta name="description" content="Go behind the scenes at Hidden Lake Lights and see how xLights, Falcon controllers, smart receivers, power distribution, RGB pixels, networking, and 90.1 FM work together." />
+  <meta name="keywords" content="Hidden Lake Lights, xLights, xSchedule, Falcon F16V3, Falcon F16V4, WS2811 pixels, Christmas light controller, pixel light show, E1.31, synchronized Christmas lights" />
+  <meta name="author" content="Jacob Jones" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#050608" />
+
+  <meta property="og:title" content="How It’s Done | Hidden Lake Lights" />
+  <meta property="og:description" content="See the technology behind thousands of synchronized pixels at Hidden Lake Lights." />
+  <meta property="og:image" content="https://hiddenlakelights.com/images/2025-Christmas-1.JPEG" />
+  <meta property="og:url" content="https://hiddenlakelights.com/how-its-done.html" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How It’s Done | Hidden Lake Lights" />
+  <meta name="twitter:description" content="A behind-the-scenes look at the controllers, pixels, power, networking, sequencing and FM audio behind Hidden Lake Lights." />
+  <meta name="twitter:image" content="https://hiddenlakelights.com/images/2025-Christmas-1.JPEG" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="images/favicon-blue.png">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="how-its-done.css" />
+</head>
+
+<body class="how-page">
+  <div class="background-glow"></div>
+  <div class="snow" aria-hidden="true"></div>
+
+  <div class="top-bar">
+    <span class="pulse-dot"></span>
+    Behind the scenes at Hidden Lake Lights — see how the show comes to life!
+  </div>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="index.html">
+        <img src="images/favicon-green.png" alt="HLL Logo" class="logo-img">
+        <span>Hidden Lake Lights</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#schedule">Schedule</a>
+        <a href="index.html#donate">Donate</a>
+        <a href="how-its-done.html" class="active-page">How It’s Done</a>
+        <a href="whats-new.html">What’s New?</a>
+        <a href="halloween.html" class="halloween-btn">🎃 Halloween</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="how-hero" id="top">
+      <div class="how-hero-grid"></div>
+      <div class="how-hero-orb orb-one"></div>
+      <div class="how-hero-orb orb-two"></div>
+
+      <div class="how-hero-content reveal">
+        <p class="eyebrow">Behind The Lights</p>
+        <h1>How It’s Done</h1>
+        <p class="how-hero-text">
+          Thousands of individually controlled lights, two main pixel controllers, a dedicated show computer,
+          nine DC power supplies, a private network, and a whole lot of programming all work together to make
+          Hidden Lake Lights come alive.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="button primary" href="#signal">Follow The Signal</a>
+          <a class="button glass" href="#equipment">Explore The Equipment</a>
+        </div>
+      </div>
+
+      <div class="how-scroll-cue" aria-hidden="true">
+        <span>SCROLL TO GO BEHIND THE SCENES</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- QUICK STATS -->
+    <section class="how-stats">
+      <article class="how-stat reveal">
+        <span class="how-stat-icon"><i class="fa-solid fa-lightbulb"></i></span>
+        <strong>24,990</strong>
+        <p>Christmas Lights</p>
+      </article>
+
+      <article class="how-stat reveal">
+        <span class="how-stat-icon"><i class="fa-solid fa-microchip"></i></span>
+        <strong>2</strong>
+        <p>Main Pixel Controllers</p>
+      </article>
+
+      <article class="how-stat reveal">
+        <span class="how-stat-icon"><i class="fa-solid fa-bolt"></i></span>
+        <strong>3,240W</strong>
+        <p>Installed DC Supply Capacity</p>
+      </article>
+
+      <article class="how-stat reveal">
+        <span class="how-stat-icon"><i class="fa-solid fa-radio"></i></span>
+        <strong>90.1 FM</strong>
+        <p>Show Audio</p>
+      </article>
+    </section>
+
+    <!-- INTRO -->
+    <section class="section how-intro">
+      <div class="section-heading reveal">
+        <p class="eyebrow">It Starts With A Song</p>
+        <h2>More Than Just Lights</h2>
+        <p>
+          A synchronized light show is really several systems working together at the exact same time. The music,
+          lighting data, controllers, power system, network, and FM audio all have separate jobs. When everything is
+          timed correctly, the result looks simple: the lights dance to the music.
+        </p>
+      </div>
+
+      <div class="how-intro-callout reveal">
+        <div class="callout-icon"><i class="fa-solid fa-circle-info"></i></div>
+        <div>
+          <strong>The important idea:</strong>
+          <p>
+            The show computer does not directly power the lights. It sends instructions. The Falcon controllers turn
+            those instructions into pixel data, while a separate 12-volt DC power system supplies the electricity the
+            pixels need to actually illuminate.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNAL FLOW -->
+    <section class="how-signal-section" id="signal">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Follow The Signal</p>
+        <h2>From Music To Light</h2>
+        <p>Here is the path a lighting command takes before a pixel in the yard changes color.</p>
+      </div>
+
+      <div class="signal-flow reveal">
+        <div class="signal-line" aria-hidden="true">
+          <span class="signal-pulse"></span>
+        </div>
+
+        <article class="signal-node">
+          <div class="signal-number">01</div>
+          <div class="signal-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div class="signal-copy">
+            <p class="signal-kicker">Design</p>
+            <h3>xLights</h3>
+            <p>Every color, fade, chase, flash and effect is programmed against the music on a timeline.</p>
+          </div>
+        </article>
+
+        <article class="signal-node">
+          <div class="signal-number">02</div>
+          <div class="signal-icon"><i class="fa-solid fa-play"></i></div>
+          <div class="signal-copy">
+            <p class="signal-kicker">Playback</p>
+            <h3>xSchedule</h3>
+            <p>The scheduler plays the sequence and audio at the correct time each night.</p>
+          </div>
+        </article>
+
+        <article class="signal-node">
+          <div class="signal-number">03</div>
+          <div class="signal-icon"><i class="fa-solid fa-computer"></i></div>
+          <div class="signal-copy">
+            <p class="signal-kicker">Show Control</p>
+            <h3>Dedicated Show PC</h3>
+            <p>The computer outputs the lighting data onto a private Ethernet network dedicated to the show.</p>
+          </div>
+        </article>
+
+        <article class="signal-node">
+          <div class="signal-number">04</div>
+          <div class="signal-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <div class="signal-copy">
+            <p class="signal-kicker">Transport</p>
+            <h3>Private Network</h3>
+            <p>No internet is required. The show PC talks directly to the outdoor pixel controllers.</p>
+          </div>
+        </article>
+
+        <article class="signal-node">
+          <div class="signal-number">05</div>
+          <div class="signal-icon"><i class="fa-solid fa-microchip"></i></div>
+          <div class="signal-copy">
+            <p class="signal-kicker">Control</p>
+            <h3>Falcon F16V3 + F16V4</h3>
+            <p>The controllers receive show data and generate the precise signals needed by each connected pixel string.</p>
+          </div>
+        </article>
+
+        <article class="signal-node">
+          <div class="signal-number">06</div>
+          <div class="signal-icon"><i class="fa-solid fa-sitemap"></i></div>
+          <div class="signal-copy">
+            <p class="signal-kicker">Extension</p>
+            <h3>Smart Receivers</h3>
+            <p>Four Falcon Smart Receivers extend outputs to farther-away areas such as roof props and singing faces.</p>
+          </div>
+        </article>
+
+        <article class="signal-node signal-final">
+          <div class="signal-number">07</div>
+          <div class="signal-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <div class="signal-copy">
+            <p class="signal-kicker">The Result</p>
+            <h3>WS2811 Pixels</h3>
+            <p>Each pixel receives its instructions and produces the requested red, green and blue light.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="power-parallel reveal">
+        <span class="power-parallel-icon"><i class="fa-solid fa-bolt"></i></span>
+        <div>
+          <p class="signal-kicker">Running Alongside The Data</p>
+          <h3>The 12V Power System</h3>
+          <p>
+            Nine 12V power supplies and roughly 14 distribution boards deliver DC power around the display. Power can
+            be injected at different points so long pixel runs stay bright and different areas can be isolated into
+            easier-to-troubleshoot zones.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EQUIPMENT -->
+    <section class="section" id="equipment">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Inside The System</p>
+        <h2>The Equipment</h2>
+        <p>Every part of the show has a specific job. Here is what we use and why.</p>
+      </div>
+
+      <div class="tech-grid">
+        <article class="tech-card reveal">
+          <div class="tech-card-top">
+            <span><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+            <small>SEQUENCING</small>
+          </div>
+          <h3>xLights</h3>
+          <p>
+            xLights is the software used to design the show. It is free and open source and supports technologies such
+            as DMX and E1.31 Ethernet-based lighting control. The house and props are modeled inside the software, then
+            effects are placed on a timeline to match the music.
+          </p>
+        </article>
+
+        <article class="tech-card reveal">
+          <div class="tech-card-top">
+            <span><i class="fa-solid fa-calendar-check"></i></span>
+            <small>PLAYBACK</small>
+          </div>
+          <h3>xSchedule</h3>
+          <p>
+            Hidden Lake Lights uses xSchedule, which is included with xLights, to run the show each night. It handles
+            scheduled playback of the sequence and music. Another popular option in the lighting community is Falcon
+            Player, commonly called FPP.
+          </p>
+        </article>
+
+        <article class="tech-card reveal">
+          <div class="tech-card-top">
+            <span><i class="fa-solid fa-microchip"></i></span>
+            <small>MAIN CONTROL</small>
+          </div>
+          <h3>Falcon F16V3 + F16V4</h3>
+          <p>
+            These are the two main pixel controllers. They control the visible behavior of every connected light —
+            color, intensity, timing, flashing and effects — based on the data sent by the show computer.
+          </p>
+        </article>
+
+        <article class="tech-card reveal">
+          <div class="tech-card-top">
+            <span><i class="fa-solid fa-diagram-project"></i></span>
+            <small>REMOTE OUTPUTS</small>
+          </div>
+          <h3>4 Falcon Smart Receivers</h3>
+          <p>
+            Smart Receivers let controller outputs reach areas that are inconvenient to wire directly back to the main
+            controller locations. We use them for farther-away elements including roof props and the singing faces.
+          </p>
+        </article>
+
+        <article class="tech-card reveal">
+          <div class="tech-card-top">
+            <span><i class="fa-solid fa-ethernet"></i></span>
+            <small>NETWORK</small>
+          </div>
+          <h3>Offline By Design</h3>
+          <p>
+            The show network is intentionally not connected to the internet. The show PC has a direct network path to
+            the pixel controllers outside. Keeping the show network focused on one job makes the design simple and
+            reduces unnecessary dependencies.
+          </p>
+        </article>
+
+        <article class="tech-card reveal">
+          <div class="tech-card-top">
+            <span><i class="fa-solid fa-tower-broadcast"></i></span>
+            <small>AUDIO</small>
+          </div>
+          <h3>1W FM Transmitter</h3>
+          <p>
+            The same music used for sequencing is broadcast so guests can listen from inside their vehicles. Hidden
+            Lake Lights uses a 1-watt FM transmitter and broadcasts on 90.1 FM.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PIXELS -->
+    <section class="how-feature-band" id="pixels">
+      <div class="how-feature-inner">
+        <div class="feature-visual pixel-visual reveal" aria-hidden="true">
+          <div class="pixel-wire"></div>
+          <span class="demo-pixel p1"></span>
+          <span class="demo-pixel p2"></span>
+          <span class="demo-pixel p3"></span>
+          <span class="demo-pixel p4"></span>
+          <span class="demo-pixel p5"></span>
+          <span class="demo-pixel p6"></span>
+          <span class="demo-pixel p7"></span>
+          <span class="demo-pixel p8"></span>
+        </div>
+
+        <div class="feature-copy reveal">
+          <p class="eyebrow">The Lights Themselves</p>
+          <h2>What Is A Pixel?</h2>
+          <p>
+            Unlike a traditional strand where many bulbs behave as one circuit, an addressable RGB pixel has a small
+            control chip that lets the system command individual lights. That is what makes effects appear to move,
+            sweep, chase and sparkle across the house.
+          </p>
+          <p>
+            Our pixels are custom ordered from vendors in China so we can specify the exact build we want — chip type,
+            wire color, wire gauge, spacing between lights, connector style and more.
+          </p>
+
+          <div class="spec-box">
+            <p class="spec-title">OUR GO-TO PIXEL SPEC</p>
+            <div class="spec-grid">
+              <div><span>Chip</span><strong>WS2811</strong></div>
+              <div><span>Voltage</span><strong>12V DC</strong></div>
+              <div><span>Wire</span><strong>Black 18 AWG</strong></div>
+              <div><span>Spacing</span><strong>3 Inches</strong></div>
+              <div><span>Connectors</span><strong>13.5 mm Pigtails</strong></div>
+              <div><span>Control</span><strong>Individual RGB</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POWER -->
+    <section class="section power-section" id="power">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Powering The Display</p>
+        <h2>12 Volts. A Lot Of Current.</h2>
+        <p>
+          Pixels run on low-voltage DC power, so standard household AC has to be converted before it can feed the
+          display.
+        </p>
+      </div>
+
+      <div class="power-layout">
+        <div class="power-stack reveal">
+          <article class="power-stat-card">
+            <span>9</span>
+            <div><strong>12V Power Supplies</strong><p>30A / 360W each</p></div>
+          </article>
+          <article class="power-stat-card">
+            <span>14</span>
+            <div><strong>Approx. Distribution Boards</strong><p>Power split into manageable zones</p></div>
+          </article>
+          <article class="power-stat-card">
+            <span>30%</span>
+            <div><strong>Typical Show Brightness</strong><p>Plenty bright after dark</p></div>
+          </article>
+          <article class="power-stat-card">
+            <span>~27A</span>
+            <div><strong>Estimated AC Draw</strong><p>Approximate, not a measured full-show value</p></div>
+          </article>
+        </div>
+
+        <div class="power-explainer reveal">
+          <h3>Why so many distribution boards?</h3>
+          <p>
+            Long wire runs create voltage drop. Instead of trying to power an enormous portion of the show from one
+            point, power is distributed around the property and injected where needed. This helps maintain voltage and
+            creates logical power zones that are much easier to diagnose when something goes wrong.
+          </p>
+
+          <h3>Why only 30% brightness?</h3>
+          <p>
+            RGB pixels are extremely bright at night. Running the display at full output is unnecessary for the visual
+            effect and would dramatically increase the electrical load. Around 30% still looks very bright to viewers
+            while keeping power demand much more reasonable.
+          </p>
+
+          <div class="warning-note">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <p>
+              The estimated 27-amp AC figure is a practical estimate, not a laboratory measurement of the entire show.
+              Real demand changes constantly because different sequences use different colors, effects and brightness
+              levels.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW PIXEL DATA WORKS -->
+    <section class="how-data-section">
+      <div class="how-data-inner">
+        <div class="feature-copy reveal">
+          <p class="eyebrow">A Tiny Conversation</p>
+          <h2>What The Pixel Hears</h2>
+          <p>
+            A pixel does not understand “make the roof candy cane sparkle.” It receives a stream of digital values. The
+            controller sends color information down the string, and each WS2811 pixel takes the portion meant for it
+            before passing the remaining data farther down the line.
+          </p>
+          <p>
+            xLights handles the creative side. The Falcon controllers handle the real-time output. The result is precise
+            control over thousands of individual points of light without a separate control wire running to every bulb.
+          </p>
+        </div>
+
+        <div class="data-demo reveal" aria-label="Animated RGB pixel data illustration">
+          <div class="data-source">
+            <i class="fa-solid fa-microchip"></i>
+            <span>FALCON</span>
+          </div>
+          <div class="data-stream">
+            <span class="packet packet-r">R</span>
+            <span class="packet packet-g">G</span>
+            <span class="packet packet-b">B</span>
+          </div>
+          <div class="data-pixels">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FM -->
+    <section class="section fm-section" id="fm">
+      <div class="fm-card reveal">
+        <div class="fm-frequency">
+          <span>LISTEN ON</span>
+          <strong>90.1</strong>
+          <small>FM</small>
+        </div>
+
+        <div class="fm-copy">
+          <p class="eyebrow">The Other Half Of The Show</p>
+          <h2>Getting The Music To Your Car</h2>
+          <p>
+            The audio playing with the sequence is also fed to a small FM transmitter. Visitors tune their car radio to
+            90.1 FM, so the music reaches them without outdoor speakers filling the neighborhood with sound.
+          </p>
+          <p>
+            Hidden Lake Lights currently uses a 1-watt transmitter purchased online. Anyone building an FM-based
+            display should verify the rules that apply where they live, use an appropriate transmitter, and select a
+            frequency that does not cause harmful interference to licensed broadcasts.
+          </p>
+        </div>
+
+        <div class="fm-rings" aria-hidden="true"><span></span><span></span><span></span></div>
+      </div>
+    </section>
+
+    <!-- BUILD PROCESS -->
+    <section class="how-process-section" id="process">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Before Opening Night</p>
+        <h2>Building A Season</h2>
+        <p>The final show is only the last step. Most of the work happens long before the first car arrives.</p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-card reveal">
+          <span>01</span><i class="fa-solid fa-pen-ruler"></i><h3>Plan</h3>
+          <p>Decide what changes, which props are being added and how the display will be laid out.</p>
+        </article>
+        <article class="process-card reveal">
+          <span>02</span><i class="fa-solid fa-hammer"></i><h3>Build</h3>
+          <p>Assemble props, wire controllers, build power zones, make cables and prepare enclosures.</p>
+        </article>
+        <article class="process-card reveal">
+          <span>03</span><i class="fa-solid fa-music"></i><h3>Sequence</h3>
+          <p>Program songs in xLights, often adjusting individual effects down to fractions of a second.</p>
+        </article>
+        <article class="process-card reveal">
+          <span>04</span><i class="fa-solid fa-house"></i><h3>Install</h3>
+          <p>Mount the lights, props, controllers, receivers, power equipment and network connections.</p>
+        </article>
+        <article class="process-card reveal">
+          <span>05</span><i class="fa-solid fa-screwdriver-wrench"></i><h3>Test</h3>
+          <p>Find bad pixels, wiring mistakes, weak voltage points, communication issues and sequencing problems.</p>
+        </article>
+        <article class="process-card reveal">
+          <span>06</span><i class="fa-solid fa-star"></i><h3>Showtime</h3>
+          <p>xSchedule takes over and the entire system repeats the programmed show throughout the night.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- BEHIND THE SCENES -->
+    <section class="section behind-scenes-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">The Part You Usually Don’t See</p>
+        <h2>Behind The Scenes</h2>
+        <p>Finished lights are the fun part. Setup, wiring, testing and troubleshooting are what make them possible.</p>
+      </div>
+
+      <div class="behind-scenes-grid reveal">
+        <div class="behind-photo behind-main">
+          <img src="images/me-setup.jpg" alt="Hidden Lake Lights setup work">
+          <span>Setup & Installation</span>
+        </div>
+        <div class="behind-photo">
+          <img src="images/2025-Christmas-1.JPEG" alt="Hidden Lake Lights Christmas display">
+          <span>The Finished Display</span>
+        </div>
+        <div class="behind-photo">
+          <img src="images/2025-christmas-2.JPG" alt="Hidden Lake Lights in action">
+          <span>Lights In Action</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Common Questions</p>
+        <h2>Technical FAQ</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary>Does every light have its own wire back to the controller?</summary>
+          <p>No. Pixels are daisy-chained. Data moves down a string from one pixel to the next, which allows thousands of lights to be individually controlled without thousands of separate home-run cables.</p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Is the show controlled over Wi-Fi or the internet?</summary>
+          <p>No. Hidden Lake Lights uses a dedicated, offline network between the show computer and the pixel controllers. The show does not need an internet connection to run.</p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Do the Falcon controllers store all of the songs?</summary>
+          <p>In our setup, xSchedule on the show PC handles playback. The Falcon controllers receive the live lighting data and output it to the pixels.</p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Why are Smart Receivers needed?</summary>
+          <p>They let us place pixel outputs closer to props that are physically farther from the main controller locations, including roof elements and singing faces.</p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>Why not run the pixels at 100% brightness?</summary>
+          <p>They are already extremely bright after dark. Full brightness would add a huge amount of unnecessary glare and electrical demand. The show typically runs around 30% brightness.</p>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary>How does the music stay synchronized with the lights?</summary>
+          <p>The sequence and audio share the same timeline. xSchedule plays the show from the computer while the lighting data is sent to the controllers in real time.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section how-cta-section">
+      <div class="how-cta reveal">
+        <p class="eyebrow">Now You Know The Secret</p>
+        <h2>Come See It All Working Together.</h2>
+        <p>When you visit, tune to 90.1 FM and remember: every little flash you see started as a programmed instruction on a computer.</p>
+        <div class="hero-buttons">
+          <a class="button primary" href="index.html#schedule">View Show Schedule</a>
+          <a class="button glass" href="whats-new.html">See What’s New</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Hidden Lake Lights. St. Peters, Missouri. &nbsp; Design: Jacob Jones</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
