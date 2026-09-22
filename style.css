@@ -3157,3 +3157,23 @@ h2.live-status-title {
   white-space: nowrap;
   padding: 10px 14px;
 }
+/* =====================================================
+   MOBILE HAMBURGER MENU - FINAL OVERRIDE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  /* CLOSED BY DEFAULT */
+  .nav-links {
+    display: none !important;
+  }
+
+  /* OPEN ONLY AFTER HAMBURGER IS CLICKED */
+  .nav-links.active {
+    display: flex !important;
+  }
+
+  .menu-btn {
+    display: block !important;
+  }
+}
