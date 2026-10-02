@@ -3177,3 +3177,25 @@ h2.live-status-title {
     display: block !important;
   }
 }
+/* ===== HALLOWEEN DATES BUTTON ===== */
+
+.special-dates-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.halloween-dates-btn {
+  text-decoration: none;
+  background: linear-gradient(135deg, #ff7a00, #b93d00);
+  border-color: #ff8a1f;
+  color: #ffffff;
+}
+
+.halloween-dates-btn:hover {
+  background: linear-gradient(135deg, #ff922b, #d94b00);
+  border-color: #ffad5c;
+  transform: translateY(-2px);
+}
