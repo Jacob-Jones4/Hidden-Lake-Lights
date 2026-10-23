@@ -655,7 +655,7 @@ setInterval(
 ========================================================================================== UPDATE DONATION BAR!!!!!!!!!! =========================   */
 
 const christmasDonation = {
-  currentAmount: 42,
+  currentAmount: 62,
   goalAmount: 1200
 };
 
