@@ -1,46 +1,213 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Hidden Lake Lights | Halloween Show</title>
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="images/favicon-orange.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="images/favicon-orange.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ===== HALLOWEEN SONG LIST ===== */
+
+    .halloween-songs-section {
+      background: linear-gradient(
+        180deg,
+        #090909 0%,
+        #180b04 50%,
+        #090909 100%
+      );
+      scroll-margin-top: 100px;
+    }
+
+    .halloween-songs-container {
+      max-width: 850px;
+      margin: 40px auto 0;
+      border: 1px solid rgba(255, 115, 0, 0.3);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #101010;
+      box-shadow: 0 0 35px rgba(255, 100, 0, 0.08);
+    }
+
+    .halloween-songs-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      padding: 22px 25px;
+      background: linear-gradient(90deg, #4a1c00, #1b0d05);
+      border-bottom: 2px solid #ff7300;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .halloween-radio-label {
+      color: #ffae64;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .halloween-song-row {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding: 20px 25px;
+      border-bottom: 1px solid #292929;
+      transition: background 0.25s ease;
+    }
+
+    .halloween-song-row:nth-child(odd) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .halloween-song-row:hover {
+      background: rgba(255, 115, 0, 0.12);
+    }
+
+    .halloween-song-row:last-child {
+      border-bottom: none;
+    }
+
+    .song-number {
+      color: #ff7300;
+      font-size: 22px;
+      font-weight: 800;
+      min-width: 40px;
+    }
+
+    .song-details {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .song-details h3 {
+      margin: 0 0 5px;
+      color: #fff;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .song-details p {
+      margin: 0;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .song-icon {
+      color: #ff7300;
+      font-size: 20px;
+    }
+
+    .halloween-new-badge {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 8px;
+      padding: 4px 8px;
+      background: #ff7300;
+      color: #111;
+      border-radius: 5px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .song-details .song-note {
+      color: #ffad73;
+      font-size: 12px;
+      font-style: italic;
+      margin-top: 6px;
+    }
+
+    .halloween-songs-note {
+      text-align: center;
+      color: #aaa;
+      font-size: 14px;
+      margin-top: 25px;
+    }
+
+    @media (max-width: 600px) {
+      .halloween-songs-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 18px;
+      }
+
+      .halloween-song-row {
+        gap: 14px;
+        padding: 17px;
+      }
+
+      .song-number {
+        font-size: 19px;
+        min-width: 30px;
+      }
+
+      .song-details h3 {
+        font-size: 16px;
+      }
+
+      .song-details p {
+        font-size: 13px;
+      }
+
+      .song-icon {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- 👻 FLOATING GHOST -->
+  <!-- ===== FLOATING GHOSTS ===== -->
   <div class="halloween-ghost ghost-one" aria-hidden="true">👻</div>
   <div class="halloween-ghost ghost-two" aria-hidden="true">👻</div>
   <div class="halloween-ghost ghost-three" aria-hidden="true">👻</div>
 
-<!-- ===== HALLOWEEN TOP BAR ===== -->
-<div class="halloween-top-bar">
-  <span class="halloween-pulse-dot"></span>
-  The 2026 Halloween Light Show Opens October 10th @ 7pm! More Info on the Halloween page!
-</div>
-  
+  <!-- ===== HALLOWEEN TOP BAR ===== -->
+  <div class="halloween-top-bar">
+    <span class="halloween-pulse-dot"></span>
+    The 2026 Halloween Light Show Opens October 10th @ 7pm!
+    More Info on the Halloween page!
+  </div>
+
   <!-- ===== NAVBAR ===== -->
   <header class="site-header halloween-header">
     <nav class="nav">
+
       <a class="logo" href="halloween.html">
-        <img src="images/favicon-orange.png" alt="HLL Logo" class="logo-img">
+        <img
+          src="images/favicon-orange.png"
+          alt="HLL Logo"
+          class="logo-img"
+        />
         <span>Hidden Lake Lights | Halloween Edition</span>
       </a>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
 
       <div class="nav-links halloween-nav-links" id="navLinks">
         <a href="#halloween-home">Home</a>
         <a href="#halloween-schedule">Schedule</a>
+        <a href="#halloween-songs">Song List</a>
         <a href="#halloween-gallery">Gallery</a>
         <a href="#halloween-contact">Socials</a>
         <a href="index.html" class="christmas-btn">🎄 Christmas</a>
       </div>
+
     </nav>
   </header>
 
@@ -48,6 +215,7 @@
 
     <!-- ===== HERO ===== -->
     <section class="halloween-hero" id="halloween-home">
+
       <div class="lightning"></div>
 
       <div class="bats" aria-hidden="true">
@@ -58,7 +226,10 @@
 
       <div class="halloween-hero-content">
         <h1>🎃 Halloween Show</h1>
-        <p>Tune to 90.1 FM and experience the spooky side of Hidden Lake Lights</p>
+        <p>
+          Tune to 90.1 FM and experience the spooky side
+          of Hidden Lake Lights
+        </p>
       </div>
 
       <div class="pumpkin-row" aria-hidden="true">
@@ -66,26 +237,60 @@
         <span class="pumpkin">👻</span>
         <span class="pumpkin">🎃</span>
       </div>
+
     </section>
 
     <!-- ===== LIVE SHOW STATUS ===== -->
-    <section class="live-status-section halloween-live-status-section" aria-labelledby="halloweenLiveStatusTitle">
-      <div class="live-status-card halloween-live-status reveal" id="liveShowStatus" data-season="halloween">
-        <div class="live-status-indicator" aria-hidden="true"><span class="live-status-dot"></span></div>
+    <section
+      class="live-status-section halloween-live-status-section"
+      aria-labelledby="halloweenLiveStatusTitle"
+    >
+
+      <div
+        class="live-status-card halloween-live-status reveal"
+        id="liveShowStatus"
+        data-season="halloween"
+      >
+
+        <div class="live-status-indicator" aria-hidden="true">
+          <span class="live-status-dot"></span>
+        </div>
+
         <div class="live-status-copy">
           <p class="live-status-label">2026 Halloween Show Status</p>
-          <h2 id="halloweenLiveStatusTitle" class="live-status-title">Checking show status...</h2>
-          <p class="live-status-message" id="liveShowStatusMessage">Loading the current Hidden Lake Lights schedule.</p>
+
+          <h2
+            id="halloweenLiveStatusTitle"
+            class="live-status-title"
+          >
+            Checking show status...
+          </h2>
+
+          <p
+            class="live-status-message"
+            id="liveShowStatusMessage"
+          >
+            Loading the current Hidden Lake Lights schedule.
+          </p>
         </div>
+
         <div class="live-status-radio">
           <span>📻</span>
-          <div><small>When the show is live</small><strong>90.1 FM</strong></div>
+          <div>
+            <small>When the show is live</small>
+            <strong>90.1 FM</strong>
+          </div>
         </div>
+
       </div>
     </section>
 
     <!-- ===== SCHEDULE ===== -->
-    <section class="section dark-panel halloween-schedule" id="halloween-schedule">
+    <section
+      class="section dark-panel halloween-schedule"
+      id="halloween-schedule"
+    >
+
       <div class="section-heading reveal">
         <p class="eyebrow">Halloween Show</p>
         <h2>Show Schedule</h2>
@@ -93,6 +298,7 @@
       </div>
 
       <div class="schedule-grid">
+
         <article class="schedule-card reveal">
           <h3>Monday - Thursday</h3>
           <p>6 PM - 9 PM</p>
@@ -108,41 +314,310 @@
           <h3>Sunday</h3>
           <p>6 PM - 9:30 PM</p>
         </article>
+
       </div>
-    <div class="halloween-special-dates-toggle">
-  <button id="halloweenSpecialDatesBtn" class="halloween-special-dates-btn">
-    See Special Dates
-  </button>
-</div>
 
-<div id="halloweenSpecialDatesSection" class="halloween-special-dates-section hidden-halloween-special-dates">
+      <!-- ===== SPECIAL DATES TOGGLE ===== -->
+      <div class="halloween-special-dates-toggle">
+        <button
+          id="halloweenSpecialDatesBtn"
+          class="halloween-special-dates-btn"
+        >
+          See Special Dates
+        </button>
+      </div>
 
-  <h2>Special Halloween Dates</h2>
-  <p class="halloween-special-subtitle">Don’t miss these spooky nights!</p>
+      <div
+        id="halloweenSpecialDatesSection"
+        class="halloween-special-dates-section hidden-halloween-special-dates"
+      >
 
-  <div class="halloween-special-dates-grid">
+        <h2>Special Halloween Dates</h2>
 
-    <div class="halloween-special-date-card opening-night-card">
-      <div class="halloween-holiday-icon">🕯️</div>
-      <h3>Opening Night</h3>
-      <p>October 10, 2026</p>
-      <span>7PM - 10PM</span>
-      <span>The first spooky show of the season</span>
-    </div>
+        <p class="halloween-special-subtitle">
+          Don’t miss these spooky nights!
+        </p>
 
-    <div class="halloween-special-date-card halloween-night-card">
-      <div class="halloween-holiday-icon">🎃</div>
-      <h3>Halloween Night</h3>
-      <p>October 31</p>
-      <span>The biggest haunted night of the year</span>
-    </div>
+        <div class="halloween-special-dates-grid">
 
-  </div>
-</div>
+          <div class="halloween-special-date-card opening-night-card">
+            <div class="halloween-holiday-icon">🕯️</div>
+            <h3>Opening Night</h3>
+            <p>October 10, 2026</p>
+            <span>7PM - 10PM</span>
+            <span>The first spooky show of the season</span>
+          </div>
+
+          <div class="halloween-special-date-card halloween-night-card">
+            <div class="halloween-holiday-icon">🎃</div>
+            <h3>Halloween Night</h3>
+            <p>October 31</p>
+            <span>The biggest haunted night of the year</span>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===== HALLOWEEN SONG LIST ===== -->
+    <section
+      class="section halloween-songs-section"
+      id="halloween-songs"
+    >
+
+      <div class="section-heading reveal">
+        <p class="eyebrow">The Soundtrack of Halloween</p>
+        <h2>🎵 Halloween Song List</h2>
+        <p>
+          Follow along with the music that brings our
+          Halloween light show to life!
+        </p>
+      </div>
+
+      <div class="halloween-songs-container reveal">
+
+        <div class="halloween-songs-header">
+          <span>🎃 2026 Halloween Playlist</span>
+          <span class="halloween-radio-label">
+            📻 Tune to 90.1 FM
+          </span>
+        </div>
+
+        <!-- SONG 01 -->
+        <div class="halloween-song-row">
+          <span class="song-number">01</span>
+          <div class="song-details">
+            <h3>Spooky Scary Skeletons</h3>
+            <p>Andrew Gold</p>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 02 -->
+        <div class="halloween-song-row">
+          <span class="song-number">02</span>
+          <div class="song-details">
+            <h3>Mind Heist</h3>
+            <p>Zach Hemsey</p>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 03 -->
+        <div class="halloween-song-row">
+          <span class="song-number">03</span>
+          <div class="song-details">
+            <h3>Ghostbusters</h3>
+            <p>Ray Parker Jr.</p>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 04 -->
+        <div class="halloween-song-row">
+          <span class="song-number">04</span>
+          <div class="song-details">
+            <h3>Stranger Things Theme</h3>
+            <p>Netflix</p>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 05 -->
+        <div class="halloween-song-row">
+          <span class="song-number">05</span>
+          <div class="song-details">
+            <h3>Reflections of Earth</h3>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 06 -->
+        <div class="halloween-song-row">
+          <span class="song-number">06</span>
+          <div class="song-details">
+            <h3>Best of Michael Jackson Mix</h3>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 07 -->
+        <div class="halloween-song-row">
+          <span class="song-number">07</span>
+          <div class="song-details">
+            <h3>
+              Bloody Mary
+              <span class="halloween-new-badge">NEW!</span>
+            </h3>
+            <p>Lady Gaga</p>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 08 -->
+        <div class="halloween-song-row">
+          <span class="song-number">08</span>
+          <div class="song-details">
+            <h3>Phantom of the Opera Overture</h3>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 09 -->
+        <div class="halloween-song-row">
+          <span class="song-number">09</span>
+          <div class="song-details">
+            <h3>Purple People Eater</h3>
+            <p>Pegboard Nerds</p>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 10 -->
+        <div class="halloween-song-row">
+          <span class="song-number">10</span>
+          <div class="song-details">
+            <h3>
+              Somebody's Watching Me
+              <span class="halloween-new-badge">NEW!</span>
+            </h3>
+            <p>Rockwell</p>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 11 -->
+        <div class="halloween-song-row">
+          <span class="song-number">11</span>
+          <div class="song-details">
+            <h3>KPOP Demon Hunters Mashup</h3>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 12 -->
+        <div class="halloween-song-row">
+          <span class="song-number">12</span>
+          <div class="song-details">
+            <h3>Carmina Burana</h3>
+            <p>Trans-Siberian Orchestra</p>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 13 -->
+        <div class="halloween-song-row">
+          <span class="song-number">13</span>
+          <div class="song-details">
+            <h3>Witch Doctor</h3>
+            <p>Cartoons!</p>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 14 -->
+        <div class="halloween-song-row">
+          <span class="song-number">14</span>
+          <div class="song-details">
+            <h3>Thunderstruck</h3>
+            <p>AC/DC</p>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 15 -->
+        <div class="halloween-song-row">
+          <span class="song-number">15</span>
+          <div class="song-details">
+            <h3>Techno Halloween Theme</h3>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 16 -->
+        <div class="halloween-song-row">
+          <span class="song-number">16</span>
+          <div class="song-details">
+            <h3>
+              The Devil Went Down to Georgia
+              <span class="halloween-new-badge">NEW!</span>
+            </h3>
+            <p>Nickelback</p>
+            <p class="song-note">
+              Edited version — explicit language removed
+            </p>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 17 -->
+        <div class="halloween-song-row">
+          <span class="song-number">17</span>
+          <div class="song-details">
+            <h3>This Is Halloween</h3>
+            <p>The Citizens of Halloween</p>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 18 -->
+        <div class="halloween-song-row">
+          <span class="song-number">18</span>
+          <div class="song-details">
+            <h3>Bangarang</h3>
+            <p>Skrillex</p>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 19 -->
+        <div class="halloween-song-row">
+          <span class="song-number">19</span>
+          <div class="song-details">
+            <h3>Toccata – Carpimus Noctem</h3>
+            <p>Trans-Siberian Orchestra</p>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 20 -->
+        <div class="halloween-song-row">
+          <span class="song-number">20</span>
+          <div class="song-details">
+            <h3>
+              My Songs Know What You Did in the Dark
+              (Light Em Up)
+            </h3>
+            <p>Fall Out Boy</p>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+        <!-- SONG 21 -->
+        <div class="halloween-song-row">
+          <span class="song-number">21</span>
+          <div class="song-details">
+            <h3>Master of Puppets</h3>
+            <p>Metallica</p>
+          </div>
+          <span class="song-icon">🎵</span>
+        </div>
+
+      </div>
+
+      <p class="halloween-songs-note">
+        👻 Songs are listed in the order they play during the show.
+      </p>
+
     </section>
 
     <!-- ===== GALLERY ===== -->
-    <section class="section halloween-gallery-section" id="halloween-gallery">
+    <section
+      class="section halloween-gallery-section"
+      id="halloween-gallery"
+    >
+
       <div class="section-heading reveal">
         <p class="eyebrow">Gallery</p>
         <h2>Spooky Lights</h2>
@@ -150,65 +625,112 @@
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-photo halloween-photo-one reveal"><span>2025</span></div>
-        <div class="gallery-photo halloween-photo-two reveal"><span>2023</span></div>
-        <div class="gallery-photo halloween-photo-three reveal"><span>2023</span></div>
-        <div class="gallery-photo halloween-photo-four reveal"><span>2025</span></div>
+        <div class="gallery-photo halloween-photo-one reveal">
+          <span>2025</span>
+        </div>
+
+        <div class="gallery-photo halloween-photo-two reveal">
+          <span>2023</span>
+        </div>
+
+        <div class="gallery-photo halloween-photo-three reveal">
+          <span>2023</span>
+        </div>
+
+        <div class="gallery-photo halloween-photo-four reveal">
+          <span>2025</span>
+        </div>
       </div>
+
     </section>
 
     <!-- ===== CONTACT ===== -->
-    <section class="section halloween-contact-section" id="halloween-contact">
+    <section
+      class="section halloween-contact-section"
+      id="halloween-contact"
+    >
+
       <div class="section-heading reveal">
         <p class="eyebrow">Socials</p>
         <h2>Follow The Frights</h2>
       </div>
 
       <div class="contact-grid">
-        <a class="contact-card reveal" href="mailto:hiddenlakelights@gmail.com">
+
+        <a
+          class="contact-card reveal"
+          href="mailto:hiddenlakelights@gmail.com"
+        >
           <span><i class="fas fa-envelope"></i></span>
           <h3>Email</h3>
           <p>hiddenlakelights@gmail.com</p>
         </a>
 
-        <a class="contact-card reveal" href="https://www.facebook.com/hiddenlakelights" target="_blank" rel="noopener">
+        <a
+          class="contact-card reveal"
+          href="https://www.facebook.com/hiddenlakelights"
+          target="_blank"
+          rel="noopener"
+        >
           <span><i class="fab fa-facebook"></i></span>
           <h3>Facebook</h3>
           <p>@HiddenLakeLights</p>
         </a>
 
-        <a class="contact-card reveal" href="https://www.youtube.com/@hiddenlakelights" target="_blank" rel="noopener">
+        <a
+          class="contact-card reveal"
+          href="https://www.youtube.com/@hiddenlakelights"
+          target="_blank"
+          rel="noopener"
+        >
           <span><i class="fab fa-youtube"></i></span>
           <h3>YouTube</h3>
           <p>Watch videos from the past!</p>
         </a>
+
       </div>
+
     </section>
 
   </main>
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <p>© <span id="year"></span> Hidden Lake Lights. St. Peters, Missouri.   Design: Jacob Jones</p>
+    <p>
+      © <span id="year"></span> Hidden Lake Lights.
+      St. Peters, Missouri. Design: Jacob Jones
+    </p>
   </footer>
 
-  <!-- ===== JS ===== -->
+  <!-- ===== JAVASCRIPT ===== -->
   <script src="script.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const halloweenBtn = document.getElementById("halloweenSpecialDatesBtn");
-  const halloweenSection = document.getElementById("halloweenSpecialDatesSection");
 
-  if (halloweenBtn && halloweenSection) {
-    halloweenBtn.addEventListener("click", () => {
-      halloweenSection.classList.toggle("show-halloween-special-dates");
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const halloweenBtn = document.getElementById(
+        "halloweenSpecialDatesBtn"
+      );
 
-      halloweenBtn.textContent = halloweenSection.classList.contains("show-halloween-special-dates")
-        ? "Hide Special Dates"
-        : "See Special Dates";
+      const halloweenSection = document.getElementById(
+        "halloweenSpecialDatesSection"
+      );
+
+      if (halloweenBtn && halloweenSection) {
+        halloweenBtn.addEventListener("click", () => {
+          halloweenSection.classList.toggle(
+            "show-halloween-special-dates"
+          );
+
+          halloweenBtn.textContent =
+            halloweenSection.classList.contains(
+              "show-halloween-special-dates"
+            )
+              ? "Hide Special Dates"
+              : "See Special Dates";
+        });
+      }
     });
-  }
-});
-</script>
+  </script>
+
 </body>
 </html>
