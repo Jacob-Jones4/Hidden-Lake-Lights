@@ -2,163 +2,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Hidden Lake Lights | Halloween Show</title>
 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="images/favicon-orange.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon-orange.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     /* ===== HALLOWEEN SONG LIST ===== */
 
-    .halloween-songs-section {
+    #halloween-songs {
+      scroll-margin-top: 100px;
       background: linear-gradient(
         180deg,
-        #090909 0%,
+        #090909,
         #180b04 50%,
-        #090909 100%
+        #090909
       );
-      scroll-margin-top: 100px;
     }
 
-    .halloween-songs-container {
-      max-width: 850px;
-      margin: 40px auto 0;
-      border: 1px solid rgba(255, 115, 0, 0.3);
+    .hll-song-wrap {
+      max-width: 950px;
+      margin: 35px auto 0;
+      color: #f8f8f8;
+    }
+
+    .hll-song-panel {
+      background: #111;
+      border: 1px solid #74380f;
       border-radius: 16px;
       overflow: hidden;
-      background: #101010;
-      box-shadow: 0 0 35px rgba(255, 100, 0, 0.08);
+      box-shadow: 0 0 30px #ff730015;
     }
 
-    .halloween-songs-header {
+    .hll-song-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 15px;
-      padding: 22px 25px;
-      background: linear-gradient(90deg, #4a1c00, #1b0d05);
+      flex-wrap: wrap;
+      gap: 12px;
+      background: linear-gradient(90deg, #502000, #1b0d05);
       border-bottom: 2px solid #ff7300;
-      color: #fff;
-      font-size: 17px;
-      font-weight: 700;
+      padding: 18px 22px;
+      font-weight: 750;
     }
 
-    .halloween-radio-label {
-      color: #ffae64;
+    .hll-song-radio {
+      color: #ffc08a;
       font-size: 14px;
-      white-space: nowrap;
     }
 
-    .halloween-song-row {
-      display: flex;
+    .hll-song-row {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr) auto;
+      gap: 15px;
       align-items: center;
-      gap: 22px;
-      padding: 20px 25px;
-      border-bottom: 1px solid #292929;
-      transition: background 0.25s ease;
+      padding: 15px 22px;
+      border-bottom: 1px solid #2a2a2a;
     }
 
-    .halloween-song-row:nth-child(odd) {
-      background: rgba(255, 255, 255, 0.02);
+    .hll-song-row:last-child {
+      border-bottom: 0;
     }
 
-    .halloween-song-row:hover {
-      background: rgba(255, 115, 0, 0.12);
+    .hll-song-row:nth-child(even) {
+      background: #ffffff05;
     }
 
-    .halloween-song-row:last-child {
-      border-bottom: none;
-    }
-
-    .song-number {
-      color: #ff7300;
-      font-size: 22px;
+    .hll-song-number {
+      color: #ff8a27;
       font-weight: 800;
-      min-width: 40px;
+      font-size: 19px;
     }
 
-    .song-details {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .song-details h3 {
-      margin: 0 0 5px;
+    .hll-song-title {
+      font-size: 16px;
+      font-weight: 700;
       color: #fff;
-      font-size: 18px;
       line-height: 1.5;
     }
 
-    .song-details p {
-      margin: 0;
+    .hll-song-artist {
+      font-size: 13px;
       color: #aaa;
-      font-size: 14px;
+      margin-top: 3px;
     }
 
-    .song-icon {
-      color: #ff7300;
-      font-size: 20px;
+    .hll-song-note {
+      font-size: 12px;
+      color: #ffbc89;
+      margin-top: 5px;
     }
 
-    .halloween-new-badge {
+    .hll-new {
       display: inline-block;
-      vertical-align: middle;
-      margin-left: 8px;
-      padding: 4px 8px;
-      background: #ff7300;
-      color: #111;
-      border-radius: 5px;
       font-size: 10px;
+      background: #ff8000;
+      color: #141414;
+      padding: 3px 7px;
+      border-radius: 4px;
+      vertical-align: middle;
+      margin-left: 6px;
       font-weight: 900;
-      letter-spacing: 0.5px;
+    }
+
+    .hll-song-time {
+      font-variant-numeric: tabular-nums;
+      font-size: 13px;
+      color: #ffc18e;
+      text-align: right;
       white-space: nowrap;
     }
 
-    .song-details .song-note {
-      color: #ffad73;
-      font-size: 12px;
-      font-style: italic;
-      margin-top: 6px;
+    /* ===== SONG SCHEDULE ===== */
+
+    .hll-schedule-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: end;
+      margin: 24px 0;
     }
 
-    .halloween-songs-note {
-      text-align: center;
-      color: #aaa;
+    .hll-schedule-controls label {
+      display: grid;
+      gap: 6px;
+      color: #ddd;
+      font-size: 13px;
+    }
+
+    .hll-schedule-controls select {
+      color: #fff;
+      background: #1b1b1b;
+      border: 1px solid #9b4c13;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font: inherit;
+    }
+
+    .hll-schedule-controls button {
+      background: #ef7600;
+      color: #151515;
+      font-weight: 800;
+      border: 0;
+      border-radius: 8px;
+      padding: 11px 16px;
+      cursor: pointer;
+    }
+
+    .hll-schedule-controls button:hover {
+      background: #ffa13b;
+    }
+
+    .hll-schedule-status {
+      margin: 12px 0;
+      color: #ffc18e;
+      font-weight: 650;
+    }
+
+    .hll-schedule-scroll {
+      max-height: 540px;
+      overflow: auto;
+      border: 1px solid #71370d;
+      border-radius: 12px;
+      background: #101010;
+    }
+
+    .hll-schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #eee;
       font-size: 14px;
-      margin-top: 25px;
+    }
+
+    .hll-schedule-table th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #48210a;
+      text-align: left;
+      padding: 12px;
+    }
+
+    .hll-schedule-table td {
+      padding: 11px 12px;
+      border-bottom: 1px solid #2b2b2b;
+    }
+
+    .hll-schedule-table td:first-child {
+      white-space: nowrap;
+      color: #ffbd88;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .hll-schedule-table tr.hll-current {
+      background: #4e280f;
+      outline: 1px solid #ff8c29;
+    }
+
+    .hll-schedule-table tr.hll-opening {
+      background: #292016;
+    }
+
+    .hll-schedule-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .hll-help {
+      font-size: 13px;
+      color: #aaa;
+      margin: 12px 0 0;
+      line-height: 1.6;
     }
 
     @media (max-width: 600px) {
-      .halloween-songs-header {
-        flex-direction: column;
-        text-align: center;
-        padding: 18px;
+      .hll-song-row {
+        grid-template-columns: 32px minmax(0, 1fr);
+        padding: 13px;
+        gap: 10px;
       }
 
-      .halloween-song-row {
-        gap: 14px;
-        padding: 17px;
+      .hll-song-time {
+        grid-column: 2;
+        text-align: left;
       }
 
-      .song-number {
-        font-size: 19px;
-        min-width: 30px;
+      .hll-song-header {
+        padding: 15px;
       }
 
-      .song-details h3 {
-        font-size: 16px;
+      .hll-song-title {
+        font-size: 15px;
       }
 
-      .song-details p {
-        font-size: 13px;
+      .hll-schedule-table {
+        font-size: 12px;
       }
 
-      .song-icon {
-        font-size: 16px;
+      .hll-schedule-table th,
+      .hll-schedule-table td {
+        padding: 9px 7px;
       }
     }
   </style>
@@ -167,17 +253,21 @@
 <body>
 
   <!-- ===== FLOATING GHOSTS ===== -->
+
   <div class="halloween-ghost ghost-one" aria-hidden="true">👻</div>
   <div class="halloween-ghost ghost-two" aria-hidden="true">👻</div>
   <div class="halloween-ghost ghost-three" aria-hidden="true">👻</div>
 
   <!-- ===== HALLOWEEN TOP BAR ===== -->
+
   <div class="halloween-top-bar">
     <span class="halloween-pulse-dot"></span>
-    The 2026 Halloween Light Show Is Open Nightly Until Halloween Night!
+    The 2026 Halloween Light Show Opens October 10th @ 7pm!
+    More Info on the Halloween page!
   </div>
 
   <!-- ===== NAVBAR ===== -->
+
   <header class="site-header halloween-header">
     <nav class="nav">
 
@@ -186,7 +276,7 @@
           src="images/favicon-orange.png"
           alt="HLL Logo"
           class="logo-img"
-        />
+        >
         <span>Hidden Lake Lights | Halloween Edition</span>
       </a>
 
@@ -213,6 +303,7 @@
   <main>
 
     <!-- ===== HERO ===== -->
+
     <section class="halloween-hero" id="halloween-home">
 
       <div class="lightning"></div>
@@ -240,6 +331,7 @@
     </section>
 
     <!-- ===== LIVE SHOW STATUS ===== -->
+
     <section
       class="live-status-section halloween-live-status-section"
       aria-labelledby="halloweenLiveStatusTitle"
@@ -285,6 +377,7 @@
     </section>
 
     <!-- ===== SCHEDULE ===== -->
+
     <section
       class="section dark-panel halloween-schedule"
       id="halloween-schedule"
@@ -316,7 +409,8 @@
 
       </div>
 
-      <!-- ===== SPECIAL DATES TOGGLE ===== -->
+      <!-- SPECIAL DATES -->
+
       <div class="halloween-special-dates-toggle">
         <button
           id="halloweenSpecialDatesBtn"
@@ -359,7 +453,8 @@
 
     </section>
 
-    <!-- ===== HALLOWEEN SONG LIST ===== -->
+    <!-- ===== SONG LIST AND NIGHTLY SCHEDULE ===== -->
+
     <section
       class="section halloween-songs-section"
       id="halloween-songs"
@@ -367,251 +462,128 @@
 
       <div class="section-heading reveal">
         <p class="eyebrow">The Soundtrack of Halloween</p>
-        <h2>🎵 Halloween Song List</h2>
+        <h2>🎵 Halloween Song List &amp; Schedule</h2>
         <p>
-          Follow along with the music that brings our
-          Halloween light show to life!
+          See when each song plays throughout the night.
+          Tune to 90.1 FM!
         </p>
       </div>
 
-      <div class="halloween-songs-container reveal">
+      <div class="hll-song-wrap">
 
-        <div class="halloween-songs-header">
-          <span>🎃 2026 Halloween Playlist</span>
-          <span class="halloween-radio-label">
-            📻 Tune to 90.1 FM
-          </span>
-        </div>
+        <!-- PLAYLIST -->
 
-        <!-- SONG 01 -->
-        <div class="halloween-song-row">
-          <span class="song-number">01</span>
-          <div class="song-details">
-            <h3>Spooky Scary Skeletons</h3>
-            <p>Andrew Gold</p>
+        <div class="hll-song-panel">
+
+          <div class="hll-song-header">
+            <span>🎃 2026 Halloween Playlist</span>
+            <span class="hll-song-radio">📻 90.1 FM</span>
           </div>
-          <span class="song-icon">🎵</span>
+
+          <div class="hll-song-row">
+            <span class="hll-song-number">★</span>
+
+            <div>
+              <div class="hll-song-title">
+                Five Nights at Freddy's
+                <span class="hll-new">OPENING ONLY</span>
+              </div>
+
+              <div class="hll-song-artist">
+                Plays once at 6:00 PM
+              </div>
+            </div>
+
+            <span class="hll-song-time">6:00 PM</span>
+          </div>
+
+          <!-- Songs populated automatically -->
+          <div id="hllSongList"></div>
+
         </div>
 
-        <!-- SONG 02 -->
-        <div class="halloween-song-row">
-          <span class="song-number">02</span>
-          <div class="song-details">
-            <h3>Mind Heist</h3>
-            <p>Zach Hemsey</p>
-          </div>
-          <span class="song-icon">🎵</span>
+        <!-- NIGHTLY TIMELINE -->
+
+        <div class="section-heading" style="margin-top: 48px;">
+          <p class="eyebrow">Plan Your Visit</p>
+          <h2>Nightly Song Times</h2>
+          <p>
+            Calculated using the xSchedule offsets,
+            including announcements and pauses.
+          </p>
         </div>
 
-        <!-- SONG 03 -->
-        <div class="halloween-song-row">
-          <span class="song-number">03</span>
-          <div class="song-details">
-            <h3>Ghostbusters</h3>
-            <p>Ray Parker Jr.</p>
-          </div>
-          <span class="song-icon">🎵</span>
+        <div class="hll-schedule-controls">
+
+          <label for="hllNight">
+            Show night
+
+            <select id="hllNight">
+              <option value="auto">
+                Today (St. Peters time)
+              </option>
+
+              <option value="weekday">
+                Monday–Thursday · ends 9:00 PM
+              </option>
+
+              <option value="friday">
+                Friday–Saturday · ends 10:00 PM
+              </option>
+
+              <option value="sunday">
+                Sunday · ends 9:30 PM
+              </option>
+            </select>
+          </label>
+
+          <button type="button" id="hllNowBtn">
+            Jump to Now
+          </button>
+
         </div>
 
-        <!-- SONG 04 -->
-        <div class="halloween-song-row">
-          <span class="song-number">04</span>
-          <div class="song-details">
-            <h3>Stranger Things Theme</h3>
-            <p>Netflix</p>
-          </div>
-          <span class="song-icon">🎵</span>
+        <div
+          id="hllScheduleStatus"
+          class="hll-schedule-status"
+          aria-live="polite"
+        ></div>
+
+        <div
+          class="hll-schedule-scroll"
+          id="hllScheduleScroll"
+        >
+
+          <table class="hll-schedule-table">
+
+            <thead>
+              <tr>
+                <th>Start Time</th>
+                <th>Song</th>
+                <th>Playthrough</th>
+              </tr>
+            </thead>
+
+            <tbody id="hllScheduleBody"></tbody>
+
+          </table>
+
         </div>
 
-        <!-- SONG 05 -->
-        <div class="halloween-song-row">
-          <span class="song-number">05</span>
-          <div class="song-details">
-            <h3>Reflections of Earth</h3>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
-
-        <!-- SONG 06 -->
-        <div class="halloween-song-row">
-          <span class="song-number">06</span>
-          <div class="song-details">
-            <h3>Best of Michael Jackson Mix</h3>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
-
-        <!-- SONG 07 -->
-        <div class="halloween-song-row">
-          <span class="song-number">07</span>
-          <div class="song-details">
-            <h3>
-              Bloody Mary
-              <span class="halloween-new-badge">NEW!</span>
-            </h3>
-            <p>Lady Gaga</p>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
-
-        <!-- SONG 08 -->
-        <div class="halloween-song-row">
-          <span class="song-number">08</span>
-          <div class="song-details">
-            <h3>Phantom of the Opera Overture</h3>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
-
-        <!-- SONG 09 -->
-        <div class="halloween-song-row">
-          <span class="song-number">09</span>
-          <div class="song-details">
-            <h3>Purple People Eater</h3>
-            <p>Pegboard Nerds</p>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
-
-        <!-- SONG 10 -->
-        <div class="halloween-song-row">
-          <span class="song-number">10</span>
-          <div class="song-details">
-            <h3>
-              Somebody's Watching Me
-              <span class="halloween-new-badge">NEW!</span>
-            </h3>
-            <p>Rockwell</p>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
-
-        <!-- SONG 11 -->
-        <div class="halloween-song-row">
-          <span class="song-number">11</span>
-          <div class="song-details">
-            <h3>KPOP Demon Hunters Mashup</h3>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
-
-        <!-- SONG 12 -->
-        <div class="halloween-song-row">
-          <span class="song-number">12</span>
-          <div class="song-details">
-            <h3>Carmina Burana</h3>
-            <p>Trans-Siberian Orchestra</p>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
-
-        <!-- SONG 13 -->
-        <div class="halloween-song-row">
-          <span class="song-number">13</span>
-          <div class="song-details">
-            <h3>Witch Doctor</h3>
-            <p>Cartoons!</p>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
-
-        <!-- SONG 14 -->
-        <div class="halloween-song-row">
-          <span class="song-number">14</span>
-          <div class="song-details">
-            <h3>Thunderstruck</h3>
-            <p>AC/DC</p>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
-
-        <!-- SONG 15 -->
-        <div class="halloween-song-row">
-          <span class="song-number">15</span>
-          <div class="song-details">
-            <h3>Techno Halloween Theme</h3>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
-
-        <!-- SONG 16 -->
-        <div class="halloween-song-row">
-          <span class="song-number">16</span>
-          <div class="song-details">
-            <h3>
-              The Devil Went Down to Georgia
-              <span class="halloween-new-badge">NEW!</span>
-            </h3>
-            <p>Nickelback</p>
-            <p class="song-note">
-              Edited version — explicit language removed
-            </p>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
-
-        <!-- SONG 17 -->
-        <div class="halloween-song-row">
-          <span class="song-number">17</span>
-          <div class="song-details">
-            <h3>This Is Halloween</h3>
-            <p>The Citizens of Halloween</p>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
-
-        <!-- SONG 18 -->
-        <div class="halloween-song-row">
-          <span class="song-number">18</span>
-          <div class="song-details">
-            <h3>Bangarang</h3>
-            <p>Skrillex</p>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
-
-        <!-- SONG 19 -->
-        <div class="halloween-song-row">
-          <span class="song-number">19</span>
-          <div class="song-details">
-            <h3>Toccata – Carpimus Noctem</h3>
-            <p>Trans-Siberian Orchestra</p>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
-
-        <!-- SONG 20 -->
-        <div class="halloween-song-row">
-          <span class="song-number">20</span>
-          <div class="song-details">
-            <h3>
-              My Songs Know What You Did in the Dark
-              (Light Em Up)
-            </h3>
-            <p>Fall Out Boy</p>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
-
-        <!-- SONG 21 -->
-        <div class="halloween-song-row">
-          <span class="song-number">21</span>
-          <div class="song-details">
-            <h3>Master of Puppets</h3>
-            <p>Metallica</p>
-          </div>
-          <span class="song-icon">🎵</span>
-        </div>
+        <p class="hll-help">
+          Times are based on the playlist starting at exactly
+          6:00 PM Central Time. Five Nights at Freddy's plays
+          once, while the remaining playlist repeats throughout
+          the night. Actual playback may vary if the show is
+          interrupted or manually adjusted.
+        </p>
 
       </div>
-
-      <p class="halloween-songs-note">
-        👻 Songs are listed in the order they play during the show.
-      </p>
 
     </section>
 
     <!-- ===== GALLERY ===== -->
+
     <section
       class="section halloween-gallery-section"
       id="halloween-gallery"
@@ -624,6 +596,7 @@
       </div>
 
       <div class="gallery-grid">
+
         <div class="gallery-photo halloween-photo-one reveal">
           <span>2025</span>
         </div>
@@ -639,11 +612,13 @@
         <div class="gallery-photo halloween-photo-four reveal">
           <span>2025</span>
         </div>
+
       </div>
 
     </section>
 
     <!-- ===== CONTACT ===== -->
+
     <section
       class="section halloween-contact-section"
       id="halloween-contact"
@@ -694,6 +669,7 @@
   </main>
 
   <!-- ===== FOOTER ===== -->
+
   <footer>
     <p>
       © <span id="year"></span> Hidden Lake Lights.
@@ -702,10 +678,14 @@
   </footer>
 
   <!-- ===== JAVASCRIPT ===== -->
+
   <script src="script.js"></script>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+
+      // ===== SPECIAL DATES =====
+
       const halloweenBtn = document.getElementById(
         "halloweenSpecialDatesBtn"
       );
@@ -728,6 +708,458 @@
               : "See Special Dates";
         });
       }
+
+      // ===== PLAYLIST DATA =====
+      // Offsets are milliseconds from the 6 PM show start.
+      // These include all announcements and pauses.
+
+      const songs = [
+        {
+          title: "Spooky Scary Skeletons",
+          artist: "Andrew Gold",
+          offset: 136000
+        },
+        {
+          title: "Mind Heist",
+          artist: "Zach Hemsey",
+          offset: 196825
+        },
+        {
+          title: "Ghostbusters",
+          artist: "Ray Parker Jr.",
+          offset: 339950
+        },
+        {
+          title: "Stranger Things Theme",
+          artist: "Netflix",
+          offset: 576875
+        },
+        {
+          title: "Reflections of Earth",
+          artist: "",
+          offset: 636350
+        },
+        {
+          title: "Best of Michael Jackson Mix",
+          artist: "",
+          offset: 731025
+        },
+        {
+          title: "Bloody Mary",
+          artist: "Lady Gaga",
+          offset: 1073025,
+          newSong: true
+        },
+        {
+          title: "Phantom of the Opera Overture",
+          artist: "",
+          offset: 1317785
+        },
+        {
+          title: "Purple People Eater",
+          artist: "Pegboard Nerds",
+          offset: 1489285
+        },
+        {
+          title: "Somebody's Watching Me",
+          artist: "Rockwell",
+          offset: 1625510,
+          newSong: true
+        },
+        {
+          title: "KPOP Demon Hunters Mashup",
+          artist: "",
+          offset: 1938110
+        },
+        {
+          title: "Carmina Burana",
+          artist: "Trans-Siberian Orchestra",
+          offset: 2240535
+        },
+        {
+          title: "Witch Doctor",
+          artist: "Cartoons!",
+          offset: 2415560
+        },
+        {
+          title: "Thunderstruck",
+          artist: "AC/DC",
+          offset: 2598560
+        },
+        {
+          title: "Techno Halloween Theme",
+          artist: "",
+          offset: 2903535
+        },
+        {
+          title: "The Devil Went Down to Georgia",
+          artist: "Nickelback",
+          offset: 3007135,
+          newSong: true,
+          note: "Edited version — explicit language removed"
+        },
+        {
+          title: "This Is Halloween",
+          artist: "The Citizens of Halloween",
+          offset: 3238335
+        },
+        {
+          title: "Bangarang",
+          artist: "Skrillex",
+          offset: 3431110
+        },
+        {
+          title: "Toccata – Carpimus Noctem",
+          artist: "Trans-Siberian Orchestra",
+          offset: 3648360
+        },
+        {
+          title: "My Songs Know What You Did in the Dark (Light Em Up)",
+          artist: "Fall Out Boy",
+          offset: 3876385
+        },
+        {
+          title: "Master of Puppets",
+          artist: "Metallica",
+          offset: 4063245
+        }
+      ];
+
+      // ===== TIMING CONFIGURATION =====
+
+      const openingMs = 136000;
+
+      // End of final 90.1 FM announcement.
+      const fullRunMs = 4299595;
+
+      // Regular playlist duration, excluding the opening.
+      const loopMs = fullRunMs - openingMs;
+
+      const startMs = 18 * 60 * 60 * 1000;
+
+      const zone = "America/Chicago";
+
+      const nightSelect = document.getElementById("hllNight");
+      const tableBody = document.getElementById("hllScheduleBody");
+      const status = document.getElementById("hllScheduleStatus");
+      const scrollArea = document.getElementById("hllScheduleScroll");
+      const list = document.getElementById("hllSongList");
+
+      // ===== LOCAL CENTRAL TIME =====
+
+      function centralNow() {
+        const parts = new Intl.DateTimeFormat("en-US", {
+          timeZone: zone,
+          weekday: "short",
+          hour: "numeric",
+          minute: "numeric",
+          second: "numeric",
+          hour12: false
+        }).formatToParts(new Date());
+
+        const values = Object.fromEntries(
+          parts.map(part => [part.type, part.value])
+        );
+
+        const hour = Number(values.hour) % 24;
+        const minute = Number(values.minute);
+        const second = Number(values.second);
+
+        return {
+          weekday: values.weekday,
+          ms: (
+            hour * 3600 +
+            minute * 60 +
+            second
+          ) * 1000
+        };
+      }
+
+      // ===== NIGHT TYPE =====
+
+      function nightType(now) {
+        if (nightSelect.value !== "auto") {
+          return nightSelect.value;
+        }
+
+        if (
+          now.weekday === "Fri" ||
+          now.weekday === "Sat"
+        ) {
+          return "friday";
+        }
+
+        if (now.weekday === "Sun") {
+          return "sunday";
+        }
+
+        return "weekday";
+      }
+
+      function closingTime(type) {
+        if (type === "friday") {
+          return 22 * 3600000;
+        }
+
+        if (type === "sunday") {
+          return 21.5 * 3600000;
+        }
+
+        return 21 * 3600000;
+      }
+
+      // ===== FORMAT TIME =====
+
+      function timeLabel(ms) {
+        const minutes = Math.floor(ms / 60000);
+        const hour24 = Math.floor(minutes / 60) % 24;
+        const minute = minutes % 60;
+
+        const hour12 = hour24 % 12 || 12;
+        const ampm = hour24 >= 12 ? "PM" : "AM";
+
+        return (
+          hour12 +
+          ":" +
+          String(minute).padStart(2, "0") +
+          " " +
+          ampm
+        );
+      }
+
+      // ===== POPULATE SONG LIST =====
+
+      songs.forEach((song, index) => {
+        const row = document.createElement("div");
+        row.className = "hll-song-row";
+
+        const number = document.createElement("span");
+        number.className = "hll-song-number";
+        number.textContent = String(index + 1).padStart(2, "0");
+
+        const details = document.createElement("div");
+
+        const title = document.createElement("div");
+        title.className = "hll-song-title";
+        title.textContent = song.title;
+
+        if (song.newSong) {
+          const badge = document.createElement("span");
+          badge.className = "hll-new";
+          badge.textContent = "NEW!";
+          title.append(" ", badge);
+        }
+
+        details.append(title);
+
+        if (song.artist) {
+          const artist = document.createElement("div");
+          artist.className = "hll-song-artist";
+          artist.textContent = song.artist;
+          details.append(artist);
+        }
+
+        if (song.note) {
+          const note = document.createElement("div");
+          note.className = "hll-song-note";
+          note.textContent = song.note;
+          details.append(note);
+        }
+
+        const time = document.createElement("span");
+        time.className = "hll-song-time";
+        time.textContent = timeLabel(startMs + song.offset);
+
+        row.append(number, details, time);
+        list.append(row);
+      });
+
+      // ===== BUILD NIGHTLY SCHEDULE =====
+
+      let occurrences = [];
+      let displayedType = "";
+
+      function buildSchedule() {
+        const now = centralNow();
+        const type = nightType(now);
+        const closeMs = closingTime(type);
+
+        displayedType = type;
+
+        occurrences = [
+          {
+            at: startMs,
+            end: startMs + openingMs,
+            title: "Five Nights at Freddy's",
+            pass: "Opening only"
+          }
+        ];
+
+        // Loop regular songs, excluding opening.
+        for (let cycle = 0; cycle < 10; cycle++) {
+          const base = startMs + cycle * loopMs;
+
+          for (let i = 0; i < songs.length; i++) {
+            const song = songs[i];
+
+            const at = base + song.offset;
+
+            if (at >= closeMs) {
+              continue;
+            }
+
+            const nextOffset =
+              i + 1 < songs.length
+                ? songs[i + 1].offset
+                : fullRunMs;
+
+            occurrences.push({
+              at: at,
+              end: Math.min(
+                base + nextOffset,
+                closeMs
+              ),
+              title: song.title,
+              pass: String(cycle + 1)
+            });
+          }
+
+          // Stop once the next cycle begins after closing.
+          const nextCycleStart =
+            startMs + (cycle + 1) * loopMs + openingMs;
+
+          if (nextCycleStart >= closeMs) {
+            break;
+          }
+        }
+
+        occurrences.sort((a, b) => a.at - b.at);
+
+        tableBody.replaceChildren();
+
+        for (const occurrence of occurrences) {
+          const tr = document.createElement("tr");
+
+          tr.dataset.at = occurrence.at;
+          tr.dataset.end = occurrence.end;
+
+          if (occurrence.pass === "Opening only") {
+            tr.classList.add("hll-opening");
+          }
+
+          const values = [
+            timeLabel(occurrence.at),
+            occurrence.title,
+            occurrence.pass
+          ];
+
+          for (const value of values) {
+            const td = document.createElement("td");
+            td.textContent = value;
+            tr.append(td);
+          }
+
+          tableBody.append(tr);
+        }
+
+        updateCurrent();
+      }
+
+      // ===== NOW PLAYING =====
+
+      function updateCurrent() {
+        const now = centralNow();
+        const type = nightType(now);
+        const closeMs = closingTime(type);
+
+        let active = null;
+
+        for (const row of tableBody.rows) {
+          const at = Number(row.dataset.at);
+          const end = Number(row.dataset.end);
+
+          const current =
+            nightSelect.value === "auto" &&
+            now.ms >= at &&
+            now.ms < end;
+
+          row.classList.toggle("hll-current", current);
+
+          if (current) {
+            active = row;
+          }
+        }
+
+        if (nightSelect.value !== "auto") {
+          const labels = {
+            weekday: "Monday–Thursday",
+            friday: "Friday–Saturday",
+            sunday: "Sunday"
+          };
+
+          status.textContent =
+            "Showing the " +
+            labels[type] +
+            " schedule. Select Today for a current-song estimate.";
+
+        } else if (
+          now.ms < startMs ||
+          now.ms >= closeMs
+        ) {
+          status.textContent =
+            "The show is outside its scheduled hours right now. " +
+            "Browse the full nightly timeline below.";
+
+        } else if (active) {
+          status.textContent =
+            "🎵 Estimated Now Playing: " +
+            active.cells[1].textContent;
+
+        } else {
+          status.textContent =
+            "A short announcement or transition is playing.";
+        }
+
+        return active;
+      }
+
+      // ===== CONTROLS =====
+
+      nightSelect.addEventListener("change", buildSchedule);
+
+      document.getElementById("hllNowBtn")
+        .addEventListener("click", () => {
+
+          nightSelect.value = "auto";
+
+          buildSchedule();
+
+          const active = updateCurrent();
+
+          if (active) {
+            active.scrollIntoView({
+              behavior: "smooth",
+              block: "center"
+            });
+          }
+        });
+
+      // ===== INITIALIZE =====
+
+      buildSchedule();
+
+      // Refresh Now Playing every 15 seconds.
+      setInterval(() => {
+        if (
+          nightSelect.value === "auto" &&
+          displayedType !== nightType(centralNow())
+        ) {
+          buildSchedule();
+        } else {
+          updateCurrent();
+        }
+      }, 15000);
+
     });
   </script>
 
