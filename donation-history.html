@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Hidden Lake Lights | Donation History</title>
 
@@ -15,7 +16,7 @@
   <header class="site-header">
     <nav class="nav">
       <a class="logo" href="index.html">
-        <img src="images/favicon-green.png" class="logo-img">
+        <img src="images/favicon-green.png" class="logo-img" alt="Hidden Lake Lights">
         <span>Hidden Lake Lights</span>
       </a>
 
@@ -26,129 +27,170 @@
   </header>
 
   <main class="section">
+
     <a href="index.html" class="back-button">← Back to Home</a>
+
     <div class="section-heading">
       <p class="eyebrow">Donations</p>
       <h2>Past Years</h2>
       <p>A look at what we've raised over the years.</p>
     </div>
 
-   <div class="total-raised-card">
-  <span class="stat-icon">📈</span>
-  <p class="eyebrow">Total Raised Since 2018</p>
-  <h2 class="count-up" data-target="13255.88">$0</h2>
-  <p>Thank you to everyone who has donated over the years!</p>
-</div>
+    <!-- ===== ANIMATED LIFETIME TOTAL ===== -->
+    <div class="total-raised-card">
+      <span class="stat-icon">📈</span>
+      <p class="eyebrow">Total Raised Since 2018</p>
 
-<div class="best-year-card">
-  <span class="stat-icon">🏆</span>
-  <p class="eyebrow">Best Year Ever</p>
-  <h2>2020</h2>
-  <h3>$5,863.36 Raised</h3>
-  <p>Our biggest donation year so far, thanks to Halloween and Christmas donations combined.</p>
-</div>
-    
+      <h2
+        id="lifetimeDonationCounter"
+        class="count-up"
+        data-target="0"
+      >$0</h2>
+
+      <p>Thank you to everyone who has donated over the years!</p>
+    </div>
+
+    <!-- ===== BEST YEAR ===== -->
+    <div class="best-year-card">
+      <span class="stat-icon">🏆</span>
+      <p class="eyebrow">Best Year Ever</p>
+      <h2>2020</h2>
+      <h3>$5,863.36 Raised</h3>
+      <p>
+        Our biggest donation year so far, thanks to
+        Halloween and Christmas donations combined.
+      </p>
+    </div>
+
+    <!-- ===== DONATION HISTORY ===== -->
     <div class="schedule-grid">
 
-  <div class="schedule-card">
-    <h3>2018</h3>
-    <p>🎄 $584.24</p>
-  </div>
+      <div class="schedule-card">
+        <h3>2018</h3>
+        <p>🎄 $584.24</p>
+      </div>
 
-  <div class="schedule-card">
-    <h3>2019</h3>
-    <p>🎄 $493.24</p>
-  </div>
+      <div class="schedule-card">
+        <h3>2019</h3>
+        <p>🎄 $493.24</p>
+      </div>
 
-  <div class="schedule-card">
-    <h3>2020</h3>
-    <p>🎃 $1,498.63</p>
-    <p>🎄 $4,364.73</p>
-    <small>Total: $5,863.36</small>
-  </div>
+      <div class="schedule-card">
+        <h3>2020</h3>
+        <p>🎃 $1,498.63</p>
+        <p>🎄 $4,364.73</p>
+        <small>Total: $5,863.36</small>
+      </div>
 
-  <div class="schedule-card">
-    <h3>2021</h3>
-    <p>🎃 $467.31</p>
-    <p>🎄 $1,975.73</p>
-    <small>Total: $2,443.04</small>
-  </div>
+      <div class="schedule-card">
+        <h3>2021</h3>
+        <p>🎃 $467.31</p>
+        <p>🎄 $1,975.73</p>
+        <small>Total: $2,443.04</small>
+      </div>
 
-  <div class="schedule-card">
-    <h3>2022</h3>
-    <p>🎃 $321</p>
-    <p>🎄 $679</p>
-    <small>Total: $1,000</small>
-  </div>
+      <div class="schedule-card">
+        <h3>2022</h3>
+        <p>🎃 $321</p>
+        <p>🎄 $679</p>
+        <small>Total: $1,000</small>
+      </div>
 
-  <div class="schedule-card">
-    <h3>2023</h3>
-    <p>🎃 $220</p>
-    <p>🎄 $690</p>
-    <small>Total: $910</small>
-  </div>
+      <div class="schedule-card">
+        <h3>2023</h3>
+        <p>🎃 $220</p>
+        <p>🎄 $690</p>
+        <small>Total: $910</small>
+      </div>
 
-  <div class="schedule-card">
-    <h3>2024</h3>
-    <p>🎃 $197</p>
-    <p>🎄 $808</p>
-    <small>Total: $1,005</small>
-  </div>
+      <div class="schedule-card">
+        <h3>2024</h3>
+        <p>🎃 $197</p>
+        <p>🎄 $808</p>
+        <small>Total: $1,005</small>
+      </div>
 
-  <div class="schedule-card featured">
-    <h3>2025</h3>
-    <p>🎃 $228</p>
-    <p>🎄 $729</p>
-    <small>Total: $957</small>
-  </div>
+      <div class="schedule-card featured">
+        <h3>2025</h3>
+        <p>🎃 $228</p>
+        <p>🎄 $729</p>
+        <small>Total: $957</small>
+      </div>
 
-</div>
+    </div>
+
   </main>
 
   <footer>
     <p>© <span id="year"></span> Hidden Lake Lights</p>
   </footer>
 
+  <!-- ===== WEBSITE JAVASCRIPT ===== -->
   <script src="script.js"></script>
+
+  <!-- ===== SHARED DONATION SETTINGS ===== -->
+  <script src="donations.js"></script>
+
+  <!-- ===== ANIMATED DONATION COUNTER ===== -->
   <script>
-  const counters = document.querySelectorAll(".count-up");
+    document.addEventListener("DOMContentLoaded", () => {
 
-  const countUp = (counter) => {
-    const target = Number(counter.dataset.target);
-    const duration = 1800;
-    const startTime = performance.now();
+      const counters = document.querySelectorAll(".count-up");
 
-    const update = (currentTime) => {
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      const value = target * progress;
+      const countUp = (counter) => {
+        const target = Number(counter.dataset.target);
+        const duration = 1800;
+        const startTime = performance.now();
 
-      counter.textContent = value.toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD",
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      });
+        const update = (currentTime) => {
+          const progress = Math.min(
+            (currentTime - startTime) / duration,
+            1
+          );
 
-      if (progress < 1) {
-  requestAnimationFrame(update);
-} else {
-  counter.classList.add("count-finished");
-}
-    };
+          const value = target * progress;
 
-    requestAnimationFrame(update);
-  };
+          counter.textContent = value.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          });
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !entry.target.dataset.counted) {
-        entry.target.dataset.counted = "true";
-        countUp(entry.target);
-      }
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            counter.textContent = target.toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2
+            });
+
+            counter.classList.add("count-finished");
+          }
+        };
+
+        requestAnimationFrame(update);
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (
+            entry.isIntersecting &&
+            !entry.target.dataset.counted
+          ) {
+            entry.target.dataset.counted = "true";
+            countUp(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(counter => observer.observe(counter));
+
     });
-  }, { threshold: 0.5 });
+  </script>
 
-  counters.forEach(counter => observer.observe(counter));
-</script>
 </body>
 </html>
