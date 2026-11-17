@@ -454,7 +454,7 @@ Pixel Light Show
 
   <div class="donation-stat-card reveal">
     <span class="stat-icon">📈</span>
-    <h3>$13,255.88</h3>
+    <h3 id="donationLifetimeStat">$13,255.88</h3>
     <p>Total Raised Since 2018</p>
   </div>
 </section>
@@ -578,6 +578,47 @@ updateCountdown("openingNightCountdown", new Date(`November 28, ${currentYear} 1
   updateCountdown("newYearCountdown", new Date(`December 31, ${currentYear} 17:00:00`).getTime());
   });
 </script>
+
+
+  <!-- ===== DONATION TOTALS: EDIT ONE NUMBER ===== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Update this amount whenever new 2026 donations come in.
+      const donations2026 = 42;
+
+      // Based on the existing $13,255.88 lifetime total and $42 season total.
+      // Verify this historical total against your donation records.
+      const donations2018Through2025 = 13213.88;
+      const donationGoal2026 = 1200;
+
+      const lifetimeTotal = donations2018Through2025 + donations2026;
+      const progressPercent = donationGoal2026 > 0
+        ? (donations2026 / donationGoal2026) * 100
+        : 0;
+      const currency = amount => amount.toLocaleString("en-US", {
+        style: "currency", currency: "USD"
+      });
+      const setText = (id, value) => {
+        const element = document.getElementById(id);
+        if (element) element.textContent = value;
+      };
+
+      setText("donationRaisedAmount", currency(donations2026));
+      setText("donationSeasonStat", currency(donations2026));
+      setText("donationGoalAmount", currency(donationGoal2026));
+      setText("donationGoalStat", currency(donationGoal2026));
+      setText("donationLifetimeStat", currency(lifetimeTotal));
+      setText("donationProgressPercent", `${Math.round(progressPercent)}% of goal`);
+
+      const fill = document.getElementById("donationProgressFill");
+      if (fill) fill.style.width = `${Math.min(100, Math.max(0, progressPercent))}%`;
+      const bar = document.getElementById("donationProgressBar");
+      if (bar) {
+        bar.setAttribute("aria-valuemax", String(donationGoal2026));
+        bar.setAttribute("aria-valuenow", String(donations2026));
+      }
+    });
+  </script>
 
   <!-- ===== PAGE END ===== -->
 </body>
