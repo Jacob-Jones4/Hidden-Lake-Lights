@@ -4,7 +4,7 @@
    Change donations2026 to update both pages.
 ========================================== */
 
-const donations2026 = 42;
+const donations2026 = 564.20;
 const donations2018Through2025 = 13213.88;
 const donationGoal2026 = 1200;
 
