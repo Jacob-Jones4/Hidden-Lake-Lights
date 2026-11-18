@@ -3225,4 +3225,8 @@ h2.live-status-title {
   font-style: italic;
   margin-top: 6px;
 }
+/* ===== DISABLE HALLOWEEN BUTTON PULSE ===== */
 
+.nav-links .halloween-btn {
+  animation: none !important;
+}
