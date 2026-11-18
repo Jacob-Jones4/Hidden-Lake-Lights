@@ -1287,7 +1287,7 @@ body:has(.halloween-hero) {
 }
 
 .halloween-photo-two {
-  background-image: url("images/halloween-2.jpeg");
+  background-image: url("images/HLL Halloween 2026-2.JPEG");
 }
 
 .halloween-photo-three {
@@ -1296,7 +1296,7 @@ body:has(.halloween-hero) {
 
 .halloween-photo-four {
   grid-column: span 2;
-  background-image: url("images/halloween-1.jpg");
+  background-image: url("images/HLL Halloween 2026.JPEG");
 }
 
 /* ===== HALLOWEEN CONTACT ===== */
